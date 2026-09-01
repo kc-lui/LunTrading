@@ -48,7 +48,11 @@ GROUP_OF = {vid: g for g, vids in GROUPS.items() for vid in vids}
 
 rows = []
 for line in Path("data/playlist_meta.txt").read_text().splitlines():
-    vid, title, upload_date, duration, views = line.split("|")
+    # Titles may themselves contain "|": id is the first field, the last three
+    # are date/duration/views, and the title is everything in between.
+    parts = line.split("|")
+    vid, upload_date, duration, views = parts[0], *parts[-3:]
+    title = "|".join(parts[1:-3])
     rows.append({
         "id": vid,
         "title": " ".join(title.split()),
