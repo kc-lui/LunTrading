@@ -1,0 +1,6 @@
+.venv/
+data/audio/
+data/raw_subs/
+*.log
+__pycache__/
+.DS_Store
