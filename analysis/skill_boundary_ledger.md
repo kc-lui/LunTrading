@@ -28,3 +28,8 @@
 - **覆蓋**：14 種價格行為策略索引、市場階段判斷、偏向兩步法、K 線力度三分法/時鐘法、破位 vs 破位回調雙選項、供應需求六招（衝停衝 base 規則）、動能兩階段、Turtle Soup、諧波三形態（Bat/Butterfly/Gartley XABCD，單源低信心子節）、ICI 自創形態、confluence 分層（2–3 底線/3–5 理想）、均線口徑演化（100日→EMA50→21/50/200）。
 - **唔覆蓋**：PD Array 詞彙（→ lun-ict-pd-arrays）、假突破背後訂單博弈（→ lun-liquidity-analysis）、HTF→LTF 完整分工（→ lun-multi-timeframe-analysis）、Fib 回調入場執行（→ lun-ote-entry-model）、出場（→ lun-exit-management）、時段（→ lun-kill-zones-timing）。
 - **DRY anchor**：策略嘅「入場模式」層由本 skill 持有；sibling 講到具體策略名（破位清單、動能、S&D、諧波、ICI、Turtle Soup）一律指向本 skill。
+
+### 3. lun-liquidity-analysis ✅ 90/100（2026-09-02，auto 80 / LLM 96，first pass）
+- **覆蓋**：訂單博弈機制層 — 三種訂單類型、止損單＝突破單燃料、流動性池地圖（高低壓、internal/external）、三種流動性形態 vs 三種池行為（平行框架，唔好合併）、獵殺/sweep 循環、真假突破嘅「站得住」機制測試、先佈局 vs 等確認雙口徑、Daily Bias 應用鏈、進階工具（Heatmap 盲點等，單源）。
+- **唔覆蓋**：PD Array 詞彙（→ lun-ict-pd-arrays）、破位策略執行/K線收盤紀律（→ lun-price-action-toolkit）、時段（→ lun-kill-zones-timing）、MTF 分工（→ lun-multi-timeframe-analysis）、入場執行（→ lun-ote-entry-model）、出場（→ lun-exit-management）。
+- **DRY anchor**：流動性池位置、掃蕩機制、真假突破機制測試由本 skill 持有；「掃描流動性」相關一律指向本 skill。

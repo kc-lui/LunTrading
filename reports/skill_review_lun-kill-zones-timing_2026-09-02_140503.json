@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-09-02 14:05:03",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-kill-zones-timing",
+  "skill_file": "skills/lun-kill-zones-timing/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-kill-zones-timing",
+    "skill_file": "skills/lun-kill-zones-timing/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-kill-zones-timing/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-kill-zones-timing/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-kill-zones-timing/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-kill-zones-timing.json",
+    "score": 96,
+    "summary": "Excellent corpus-grounded knowledge-only skill that handles the highest time-injection risk in the corpus correctly: every clock time in the skill was independently verified against source. All three Kill Zone windows (Asian 8pm-12am, London 2-5am, NY 8-11am NY time) verified verbatim in the CJi1ltRQnys note; the NY second caliber (indicator 9:30-11:00 plus the speaker's personal 8am start) verified verbatim in data/transcripts/7dDW8tF1cZo.txt and confirmed absent from that video's note, so the transcript-recovery label is honest; the QZNzq-BunA4 full-session times (US-time 3am-12pm London, 'our time' 5am-3pm Asia), the 9:30 rule (dual-sourced), and all five time-exit rules (10pm stop, 11-12 exit, no-overnight, pre-5am close, hourly-check routine) each verified in their cited notes. No textbook ICT times were injected: midnight open, CBDR, and silver-bullet windows are explicitly fenced out, and the tCfmxMX5WaU silver-bullet mention was confirmed in the transcript to be a subscribe-teaser only, exactly matching the skill's 僅預告未教 characterization in Prerequisite 1 and Limitation 3. Contradiction tiers are preserved as parallel, not merged: NY two-caliber (Step 2 and Limitation 2 with an explicit do-not-merge instruction), Asian-session three-caliber stance (tradable-with-pairing vs exam-system-off vs volatility-fallback, Limitation 4), timezone calibers kept with origin context per Prerequisite 2, and the 1/3/5-minute vs anti-sub-5-minute conflict recorded per profile 7.3.5 without adjudication. 單源低信心 flags on Weekly Profile and the news-calendar subsection are consistent across the vocabulary table, both subsection headers, Output items 2-3, and Limitation 1. DRY is clean (liquidity mechanics, breakout execution, entry, exit, MTF, risk all deferred with the session-vocabulary anchor claimed here), ASR ticker variants (GPUSD/FPSC100/DAOJONS30) are preserved with 推測 labels rather than silently corrected, and roughly 35 quote verifications across notes and transcripts all passed with zero fabrication. Only minor interpretive-gloss nits remain.",
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-kill-zones-timing/SKILL.md",
+        "line": 71,
+        "message": "The Step 4 routine bullet labels the speaker's personal routine (2-5pm watch, 8pm resume, 10pm decision) as 「紐約時間口徑下嘅倫敦＋紐約盤」, but CJi1ltRQnys does not explicitly state the routine clock is New York time — this is an inference from the routine hours aligning with the London (2-5) and NY (8-11) kill zones stated earlier in the same video. The inference is well-founded but is presented with the same confidence as verbatim-sourced facts.",
+        "improvement": "Add a 推測 marker, e.g. 「（時區為推斷：同片 Kill Zone 全部用紐約時間，routine 時數與倫敦/紐約 Kill Zone 吻合）」, so operators can distinguish the inferred timezone gloss from directly quoted times."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-kill-zones-timing/references/evidence.md",
+        "line": 55,
+        "message": "The 7j7_mhfda38 quote 「Asian 就是亞洲市場。我們就做。關掉。」 is annotated as a suspected ASR omission (推測＝我們就不做), which is honest — but this reconstructed reading is load-bearing for the Asian-session three-caliber contradiction in SKILL.md Limitation 4 (the 'exam system turns Asia off' tier rests on it). The tier is corroborated by 「我們只需要倫敦跟紐約」 in the same quote, but the dependency on an ASR-repaired fragment is not surfaced in the SKILL.md limitation.",
+        "improvement": "In SKILL.md Limitation 4, cite the unambiguous 「我們只需要倫敦跟紐約」 as the primary evidence for the exam-system tier and keep the 「我們就做。關掉。」 fragment as secondary with its ASR caveat, so the contradiction tier does not appear to rest on a reconstructed sentence."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 90,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": false,
+    "improvement_items": [],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-kill-zones-timing/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-kill-zones-timing/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-kill-zones-timing/SKILL.md",
+        "line": 71,
+        "message": "The Step 4 routine bullet labels the speaker's personal routine (2-5pm watch, 8pm resume, 10pm decision) as 「紐約時間口徑下嘅倫敦＋紐約盤」, but CJi1ltRQnys does not explicitly state the routine clock is New York time — this is an inference from the routine hours aligning with the London (2-5) and NY (8-11) kill zones stated earlier in the same video. The inference is well-founded but is presented with the same confidence as verbatim-sourced facts.",
+        "improvement": "Add a 推測 marker, e.g. 「（時區為推斷：同片 Kill Zone 全部用紐約時間，routine 時數與倫敦/紐約 Kill Zone 吻合）」, so operators can distinguish the inferred timezone gloss from directly quoted times.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-kill-zones-timing/references/evidence.md",
+        "line": 55,
+        "message": "The 7j7_mhfda38 quote 「Asian 就是亞洲市場。我們就做。關掉。」 is annotated as a suspected ASR omission (推測＝我們就不做), which is honest — but this reconstructed reading is load-bearing for the Asian-session three-caliber contradiction in SKILL.md Limitation 4 (the 'exam system turns Asia off' tier rests on it). The tier is corroborated by 「我們只需要倫敦跟紐約」 in the same quote, but the dependency on an ASR-repaired fragment is not surfaced in the SKILL.md limitation.",
+        "improvement": "In SKILL.md Limitation 4, cite the unambiguous 「我們只需要倫敦跟紐約」 as the primary evidence for the exam-system tier and keep the 「我們就做。關掉。」 fragment as secondary with its ASR caveat, so the contradiction tier does not appear to rest on a reconstructed sentence.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}
