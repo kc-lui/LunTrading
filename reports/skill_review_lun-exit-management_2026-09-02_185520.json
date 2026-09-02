@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-09-02 18:55:20",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-exit-management",
+  "skill_file": "skills/lun-exit-management/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-exit-management",
+    "skill_file": "skills/lun-exit-management/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-exit-management/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-exit-management/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-exit-management/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-exit-management.json",
+    "score": 96,
+    "summary": "Excellent corpus-grounded knowledge-only skill covering the corpus's densest rule area with rigorous evidence discipline. Quote integrity: 34 verifications, all passed — 21 '(transcript)'-labeled quotes verified verbatim across seven transcripts, including the three stop-placement methods, breathing-room warning, 80% early-exit and the win-rate-below-30% tradeoff (hkCvRoLc3Nk); the full Standard Deviation Projection segment chain (method name, sweep-leg hard condition, the garbled '-1-2-2-2.5-4' level string, the pick-by-confluence negation, the 1:1 floor, -1 breakeven, and -2 half-exit) in Q371XdV3apE; the three-layer management and EMA50-trailing quotes (GINdJCIIEvw); the breakeven-on-reverse-sweep iron rule (xwsyfVf2l0k); don't-lock-too-much and hold-past-a-week (zgVlK7UBNTY); and the conditional 80% version (T2Nk46EqAh4). The RdnJw-mhwlE ambiguous sentence was independently confirmed verbatim in its transcript (lines 154-158, whitespace-joined) and its 存疑 status is handled exactly right: SKILL Step 2 carries the full ambiguity note with an explicit prohibition on asserting either reading, Limitation 2 repeats it, and the reasoning mirrors the source note's own 備註 — never silently resolved. Anti-injection is clean: ATR, Chandelier, and R-multiple ladder appear only inside the Prerequisite 1 fence, and every management technique (EMA50 trailing, structure-step locking, partial exits) traces to verified quotes. Contradiction tiers are parallel: RR floors 1:1/1:2/1:3 context-layered with a must-ask-context rule, RR-vs-win-rate tradeoff quoted, the two 80% calibers explicitly 照錄唔裁決, and the stop-width paradox resolved as two layers per profile 7.3.8. The boundary split is correct and reciprocal: placement here, sizing to risk-management, session timetables to kill-zones, and SL/TP initial setting to ote-entry-model (whose Step 6 hands over in matching language). 單源 flags are consistent, including the honest disclosure that the -1/-2/-2.5/-4 levels are themselves a 推測 restoration of a garbled ASR string. Only minor table-level signaling nits remain.",
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-exit-management/SKILL.md",
+        "line": 45,
+        "message": "The vocabulary quick-table's 80% 規則 row quotes only the unconditional hkCvRoLc3Nk version, with no signal that a second caliber (T2Nk46EqAh4: requires a reversal pattern) exists. Step 6 presents both correctly, but a reader who stops at the quick table sees a single rule — inconsistent with how the same table flags 單源 and dual-caliber items elsewhere in this skill family.",
+        "improvement": "Append a marker to the table row, e.g. 「（兩口徑，見 Step 6——另一版要求反轉形態先出）」, so the parallel calibers are visible at the quick-reference level."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-exit-management/SKILL.md",
+        "line": 61,
+        "message": "Step 2's header 「止盈設定（三套方法，平行照錄）」 presents a three-method set, but hkCvRoLc3Nk teaches only the first two as a pair (evidence section 4 is titled 止盈兩法) and the third (standard deviation projection) comes from a different video. The three-method framing is the skill's own composition — each row is correctly sourced, but the set itself is unmarked synthesis, unlike the skill's careful 推測 labeling elsewhere.",
+        "improvement": "Add a half-sentence noting the composition, e.g. 「（前兩法同出 hkCvRoLc3Nk，第三法為 Q371XdV3apE 單源——三法並列係本 skill 整理，講者冇並列過）」, keeping the useful table while marking it as editorial aggregation."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 90,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": false,
+    "improvement_items": [],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-exit-management/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-exit-management/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-exit-management/SKILL.md",
+        "line": 45,
+        "message": "The vocabulary quick-table's 80% 規則 row quotes only the unconditional hkCvRoLc3Nk version, with no signal that a second caliber (T2Nk46EqAh4: requires a reversal pattern) exists. Step 6 presents both correctly, but a reader who stops at the quick table sees a single rule — inconsistent with how the same table flags 單源 and dual-caliber items elsewhere in this skill family.",
+        "improvement": "Append a marker to the table row, e.g. 「（兩口徑，見 Step 6——另一版要求反轉形態先出）」, so the parallel calibers are visible at the quick-reference level.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-exit-management/SKILL.md",
+        "line": 61,
+        "message": "Step 2's header 「止盈設定（三套方法，平行照錄）」 presents a three-method set, but hkCvRoLc3Nk teaches only the first two as a pair (evidence section 4 is titled 止盈兩法) and the third (standard deviation projection) comes from a different video. The three-method framing is the skill's own composition — each row is correctly sourced, but the set itself is unmarked synthesis, unlike the skill's careful 推測 labeling elsewhere.",
+        "improvement": "Add a half-sentence noting the composition, e.g. 「（前兩法同出 hkCvRoLc3Nk，第三法為 Q371XdV3apE 單源——三法並列係本 skill 整理，講者冇並列過）」, keeping the useful table while marking it as editorial aggregation.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}

@@ -49,3 +49,8 @@
 - **唔覆蓋**：PD Array 區域確認三層口徑（→ lun-ict-pd-arrays，引用唔重複）、掃蕩機制（→ lun-liquidity-analysis）、MTF 秘訣（→ lun-multi-timeframe-analysis）、出場管理細節（→ lun-exit-management）。
 - **DRY anchor**：入場「序列」（setup→trigger→order placement）由本 skill 持有。
 
+### 7. lun-exit-management ✅ 90/100（2026-09-02，auto 80 / LLM 96，first pass）
+- **覆蓋**：出場管理層 — 止損三法（結構位/POI 後面/呼吸空間）、止盈三套（下一個主力區/標準差投射（單源）/EMA50 追蹤）、三層管理（消除風險→利潤最大化→鎖住利潤）、80% 提前出場雙口徑、平價保護鐵律、分批（-2 出一半，單源）、RR↔勝率取捨、RR 門檻 1:1/1:2/1:3 分層、寬窄止損兩層悖論。RdnJw-mhwlE Pivot 句永久存疑標記。
+- **唔覆蓋**：倉位 sizing/風險%（→ lun-risk-management）、時段性出場時間表（→ lun-kill-zones-timing）、入場序列中嘅 SL/TP 初設（→ lun-ote-entry-model）。
+- **DRY anchor**：一切「止損放邊/止盈點邊度/幾時提前走」由本 skill 持有。
+
