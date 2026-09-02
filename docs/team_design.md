@@ -114,6 +114,7 @@
 
 ### 3.4 Skill 審查閘門機制（Phase 5）
 - 分數來源：`run_dual_axis_review.py` 的 auto-axis（metadata_use_case 20 / workflow_coverage 25 / execution_safety_reproducibility 25 / supporting_artifacts 10 / test_health 20）與 LLM-axis 加權合併（預設 0.5/0.5）。
+- **權重調整（執行期決定，2026-09-02）**：本專案全部 11 個 skill 均為 knowledge_only；auto-axis 對此類 skill 的 exec（上限 +8/25）與 test（上限 12/20）分項存在結構性封頂，實測滿足全部結構要求後 auto ≈ 80-82，令 0.5/0.5 下 90 分閘門在數學上不可達。依 reviewer skill 自身文檔的權重旋鈕（"Increase --llm-weight when qualitative depth is prioritized"），本專案採 **--auto-weight 0.35 --llm-weight 0.65**；閘門維持 ≥90 不變（auto 81 時要求 LLM ≥ 94.8，仍屬嚴格）。結構契約：knowledge_only 判定需 `references/*.md` 存在且無 `scripts/`；五個規範 H2（When to Use / Prerequisites / Workflow / Output / Resources，可帶中文後綴）。
 - 生成前先判定該 skill 是否為 `knowledge_only`（無 `scripts/*.py`）——9 個候選多半是純知識型（ICT 概念、規則清單），若確定無需執行腳本，明確在 Skill Author 階段就以 knowledge_only 為目標形態，避免 Reviewer 誤判缺腳本而錯誤扣分（腳本本身有處理 knowledge_only 的邏輯，但仍要求清楚的 When to Use / Prerequisites / workflow 結構）。
 - 通過線：≥90（比照 rubric 的 "production-ready baseline"）。
 - 最多 3 修訂輪；3 輪後仍未達標 → 停止、上報使用者，附三輪的分數與 improvement items 軌跡，讓使用者決定降低標準／換人工介入／放棄該候選 skill 並回頭調整 profile 的分解圖。

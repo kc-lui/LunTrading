@@ -262,8 +262,8 @@ Tag census（n=57）：risk-management 31｜price-action-toolkit 29｜trading-ps
 
 - **Scope／covers**：Premium/Discount 50% 劃分；Order Block（畫法、顏色不拘、品質判斷：50% 規則、第一次觸碰最強、觸碰多次失效）；Breaker Block；FVG/IFVG/隱藏 FVG（三根 K 線定義、被碰過即失效）；BPR、拒絕塊、真空塊、補償塊；POI 概念與「極限位置」原則；OB vs FVG 取捨。
 - **Does not cover**：流動性掃描本身（歸 liquidity-analysis）；入場時機（歸 ote-entry-model）；出場（歸 exit-management）。
-- **Contributing videos（17）**：tCfmxMX5WaU（總綱）、xwsyfVf2l0k、ofQ--jkHTm4、whJg0lgPbFo、7dDW8tF1cZo、3Kt_ruGepB4、Q371XdV3apE、RjNBnZ59c4U、kI5idYixD50、E0PF_0XLDGo、B7rumsOw6_U、WmW5fQjK5Qg、zgVlK7UBNTY、teVdcguZs_U、aSZzhnfOVkE、7yDxPi7Roh0、_TEaFyv7-ac。
-- **Evidence density**：高（17/57；三片主教材 tCfmxMX5WaU／xwsyfVf2l0k／ofQ--jkHTm4 定義完整）。
+- **Contributing videos（18）**：tCfmxMX5WaU（總綱）、xwsyfVf2l0k、ofQ--jkHTm4、whJg0lgPbFo、7dDW8tF1cZo、3Kt_ruGepB4、Q371XdV3apE、RjNBnZ59c4U、kI5idYixD50、E0PF_0XLDGo、B7rumsOw6_U、WmW5fQjK5Qg、zgVlK7UBNTY、teVdcguZs_U、aSZzhnfOVkE、7yDxPi7Roh0、_TEaFyv7-ac、yZoSW3DGRGI（FVG/跳空定義與 OB 價值需配合流動性判斷嘅原則）。
+- **Evidence density**：高（18/57；三片主教材 tCfmxMX5WaU／xwsyfVf2l0k／ofQ--jkHTm4 定義完整）。
 - **直接引文**：
   - 「Order Block就是導致FEG開始的那一個第一根K線」「不管顏色,紅色,還是青色,熊色,還是牛色,無所謂」（ofQ--jkHTm4）
   - 「一個高質量的order block,一個有價值的order block,你會看到價格是不會回調超過一半的。」「我發現到有FVG,有order block的話,我都會選擇order block。」（xwsyfVf2l0k）

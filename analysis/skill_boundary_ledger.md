@@ -19,4 +19,7 @@
 
 ## 已通過 skills 邊界摘要
 
-（未有）
+### 1. lun-ict-pd-arrays ✅ 90/100（2026-09-02，auto 80 / LLM 96）
+- **覆蓋**：PD Array 詞彙地基 — Order Block、Breaker Block、FVG、IFVG/隱藏FVG、BPR、拒絕塊/真空塊/補償塊、50% premium/discount 劃分紀律、區域品質檢查清單、入場確認三層口徑（追/唔追雙選項）、觸碰次數衰減規則。
+- **唔覆蓋**：流動性掃蕩理論（→ lun-liquidity-analysis）、OTE 入場步驟（→ lun-ote-entry-model）、時段選擇（→ lun-kill-zones-timing）、多時框串聯（→ lun-multi-timeframe-analysis）、出場管理（→ lun-exit-management）、倉位風險（→ lun-risk-management）。
+- **DRY anchor**：所有 sibling skills 引用 PD Array 詞彙時一律指向本 skill，唔好重新定義。

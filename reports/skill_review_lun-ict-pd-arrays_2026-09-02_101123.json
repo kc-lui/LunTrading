@@ -1,0 +1,130 @@
+{
+  "generated_at": "2026-09-02 10:11:23",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-ict-pd-arrays",
+  "skill_file": "skills/lun-ict-pd-arrays/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-ict-pd-arrays",
+    "skill_file": "skills/lun-ict-pd-arrays/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-ict-pd-arrays.json",
+    "score": 92,
+    "summary": "High-quality corpus-grounded knowledge-only skill. Quote integrity is excellent: 18 spot-checked 「」quotes (covering all major claims: 50% discipline, OB 50%-retrace rule, first-touch quality, touch-decay invalidation, OB-over-FVG preference, breaker confirmation, hidden FVG 50%-wick construction, rejection/vacuum/mitigation blocks, extreme-POI principle, three-tier entry confirmation, Russell 2000 second-touch example, 1:22.45 claim) were all found verbatim in the cited video notes or transcripts, including ASR noise characters. No generic-ICT injection detected: the standard OTE 62-79% Fibonacci theory is explicitly fenced out, and BPR/implied-FVG English terms were verified present in the tCfmxMX5WaU transcript. Contradiction handling is a strength: the three-tier entry-confirmation table (Step 4) and the second-touch exception (Step 5) represent corpus tensions as context tiers with per-tier provenance instead of smoothing them; none of the profile 7.3 contradictions fall inside this skill's scope and the applicable ones are handled. Scope matches profile 6.1 exactly and the boundary table cleanly defers liquidity/entry/exit/timing to siblings (DRY respected). Limitations section is honest about ASR errors, unverified R-multiples, paywalled content, and thin evidence for hidden FVG/BPR/mitigation block. Remaining issues are minor: one omitted alternative tier in the no-chase rule, one contributing video outside the profile 6.1 list, project-root-relative paths, and inconsistent transcript-source labeling in evidence.md.",
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 57,
+        "message": "Step 1.3 presents 「冇碰到就唔追」 as the sole rule, but in the same tCfmxMX5WaU transcript passage (immediately before the quoted sentence) the speaker explicitly offers a permitted alternative for the untouched-zone scenario: 「那你可以追�你可以等破壞了�直接做多」 before stating his personal preference not to chase. This is a mild tier-smoothing of a corpus-internal contradiction: the no-chase stance is his personal discipline (對我來說), not an absolute prohibition.",
+        "improvement": "Add one sentence after the no-chase quote noting the speaker's own stated alternative — chasing is permitted only after a structure break (「你可以等破壞了�直接做多」, tCfmxMX5WaU) — and mark no-chase as his default/strict tier, consistent with how Step 4 tiers other confirmation rules."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 145,
+        "message": "yZoSW3DGRGI is used as an evidence source (OB-value-needs-liquidity quote, also cited at line 68) but is not among the 17 contributing videos in profile section 6.1 for this skill. The skill discloses this transparently (另 yZoSW3DGRGI), but skill and profile are now out of sync as the authoritative video-to-skill mapping.",
+        "improvement": "Update analysis/lun_trading_profile.md section 6.1 to list yZoSW3DGRGI as a supplementary contributor for this skill (or footnote it as cross-skill borrowed evidence) so the profile remains the single source of truth for corpus mapping."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 144,
+        "message": "References use project-root-relative paths (analysis/lun_trading_profile.md, data/transcripts/<video_id>.txt) which only resolve when cwd is the project root; from the skill directory or another cwd they dangle. Matches the auto-axis finding.",
+        "improvement": "Add a one-line note in Resources stating paths are relative to the project root (/Users/lui/workspace/LunTrading), or prefix them consistently (e.g. <project-root>/analysis/...) so operators and agents resolve them reliably."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/references/evidence.md",
+        "line": 65,
+        "message": "The hidden-FVG construction quotes (「它把這個引線的50%給畫出來」...「50%跟50%之間的距離形成一個區域」) exist only in data/transcripts/tCfmxMX5WaU.txt, not in the video note; unlike SKILL.md (which labels transcript-only quotes with 'transcript'), evidence.md does not mark per-quote source layer, weakening auditability for the thinnest-evidence element (hidden FVG, already flagged in 侷限聲明 item 5).",
+        "improvement": "Adopt the same per-quote labeling convention in evidence.md: append (transcript) to quotes verifiable only in data/transcripts/, so reviewers can distinguish note-verified from transcript-only evidence at a glance."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 88,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context.",
+      "Step 1.3 presents 「冇碰到就唔追」 as the sole rule, but in the same tCfmxMX5WaU transcript passage (immediately before the quoted sentence) the speaker explicitly offers a permitted alternative for the untouched-zone scenario: 「那你可以追�你可以等破壞了�直接做多」 before stating his personal preference not to chase. This is a mild tier-smoothing of a corpus-internal contradiction: the no-chase stance is his personal discipline (對我來說), not an absolute prohibition. -> Add one sentence after the no-chase quote noting the speaker's own stated alternative — chasing is permitted only after a structure break (「你可以等破壞了�直接做多」, tCfmxMX5WaU) — and mark no-chase as his default/strict tier, consistent with how Step 4 tiers other confirmation rules.",
+      "yZoSW3DGRGI is used as an evidence source (OB-value-needs-liquidity quote, also cited at line 68) but is not among the 17 contributing videos in profile section 6.1 for this skill. The skill discloses this transparently (另 yZoSW3DGRGI), but skill and profile are now out of sync as the authoritative video-to-skill mapping. -> Update analysis/lun_trading_profile.md section 6.1 to list yZoSW3DGRGI as a supplementary contributor for this skill (or footnote it as cross-skill borrowed evidence) so the profile remains the single source of truth for corpus mapping.",
+      "References use project-root-relative paths (analysis/lun_trading_profile.md, data/transcripts/<video_id>.txt) which only resolve when cwd is the project root; from the skill directory or another cwd they dangle. Matches the auto-axis finding. -> Add a one-line note in Resources stating paths are relative to the project root (/Users/lui/workspace/LunTrading), or prefix them consistently (e.g. <project-root>/analysis/...) so operators and agents resolve them reliably.",
+      "The hidden-FVG construction quotes (「它把這個引線的50%給畫出來」...「50%跟50%之間的距離形成一個區域」) exist only in data/transcripts/tCfmxMX5WaU.txt, not in the video note; unlike SKILL.md (which labels transcript-only quotes with 'transcript'), evidence.md does not mark per-quote source layer, weakening auditability for the thinnest-evidence element (hidden FVG, already flagged in 侷限聲明 item 5). -> Adopt the same per-quote labeling convention in evidence.md: append (transcript) to quotes verifiable only in data/transcripts/, so reviewers can distinguish note-verified from transcript-only evidence at a glance."
+    ],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 57,
+        "message": "Step 1.3 presents 「冇碰到就唔追」 as the sole rule, but in the same tCfmxMX5WaU transcript passage (immediately before the quoted sentence) the speaker explicitly offers a permitted alternative for the untouched-zone scenario: 「那你可以追�你可以等破壞了�直接做多」 before stating his personal preference not to chase. This is a mild tier-smoothing of a corpus-internal contradiction: the no-chase stance is his personal discipline (對我來說), not an absolute prohibition.",
+        "improvement": "Add one sentence after the no-chase quote noting the speaker's own stated alternative — chasing is permitted only after a structure break (「你可以等破壞了�直接做多」, tCfmxMX5WaU) — and mark no-chase as his default/strict tier, consistent with how Step 4 tiers other confirmation rules.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 145,
+        "message": "yZoSW3DGRGI is used as an evidence source (OB-value-needs-liquidity quote, also cited at line 68) but is not among the 17 contributing videos in profile section 6.1 for this skill. The skill discloses this transparently (另 yZoSW3DGRGI), but skill and profile are now out of sync as the authoritative video-to-skill mapping.",
+        "improvement": "Update analysis/lun_trading_profile.md section 6.1 to list yZoSW3DGRGI as a supplementary contributor for this skill (or footnote it as cross-skill borrowed evidence) so the profile remains the single source of truth for corpus mapping.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 144,
+        "message": "References use project-root-relative paths (analysis/lun_trading_profile.md, data/transcripts/<video_id>.txt) which only resolve when cwd is the project root; from the skill directory or another cwd they dangle. Matches the auto-axis finding.",
+        "improvement": "Add a one-line note in Resources stating paths are relative to the project root (/Users/lui/workspace/LunTrading), or prefix them consistently (e.g. <project-root>/analysis/...) so operators and agents resolve them reliably.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/references/evidence.md",
+        "line": 65,
+        "message": "The hidden-FVG construction quotes (「它把這個引線的50%給畫出來」...「50%跟50%之間的距離形成一個區域」) exist only in data/transcripts/tCfmxMX5WaU.txt, not in the video note; unlike SKILL.md (which labels transcript-only quotes with 'transcript'), evidence.md does not mark per-quote source layer, weakening auditability for the thinnest-evidence element (hidden FVG, already flagged in 侷限聲明 item 5).",
+        "improvement": "Adopt the same per-quote labeling convention in evidence.md: append (transcript) to quotes verifiable only in data/transcripts/, so reviewers can distinguish note-verified from transcript-only evidence at a glance.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}
