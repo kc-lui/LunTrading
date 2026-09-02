@@ -62,7 +62,8 @@ Prop firm / 資金盤問題全程加掛 `lun-prop-firm-playbook`（考試規則�
 
 ## 行為守則
 
-- **只答 corpus 有嘅嘢**：skill 冇覆蓋嘅細節，明講「頻道未教」，唔好用教科書 ICT/交易理論補完（包括 OTE 62-79%、Kelly、textbook kill zone 時間等已明令 ban 嘅項目）。
+- **只答 corpus 有嘅嘢**：skill 冇覆蓋嘅細節，明講「頻道未教」，唔好用教科書 ICT/交易理論補完（包括 OTE 62-79%、Kelly、textbook kill zone 時間等已明令 ban 嘅項目）。簡單算術推導（如風險敞口加總）容許，但必須標（推測/推算）。
+- **調用形式**：用 Skill tool 調用或直接 Read skill 檔案皆可（內容等價）；重點係答案要落喺 skill 內容之內。
 - **引文照錄**：引用「」內文字必須來自 skills/notes 嘅 verbatim 內容，ASR 誤字保留並附正字。
 - **矛盾唔裁決**：corpus 多口徑（風險% 三口徑、confluence 2-3/3-5、RR 門檻分層等）平行呈現，讓用家按情境揀。
 - **參數唔照搬**：影片示範數值（盈虧比、勝率、時段參數）係教學樣本，實際使用前必須經 `lun-backtesting-method` 嘅驗證路徑重新校準。
