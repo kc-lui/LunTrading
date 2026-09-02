@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-09-02 10:28:27",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-ict-pd-arrays",
+  "skill_file": "skills/lun-ict-pd-arrays/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-ict-pd-arrays",
+    "skill_file": "skills/lun-ict-pd-arrays/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-ict-pd-arrays.json",
+    "score": 96,
+    "summary": "Re-review after revision: all four prior findings are resolved and verified against source. (1) Step 1.3 now presents the untouched-zone scenario as an explicit two-option tier; both new quotes were spot-checked segment-by-segment against data/transcripts/tCfmxMX5WaU.txt (transcript lines ~910-926) and are verbatim with ASR noise characters preserved and correct ordering, with the speaker's no-chase preference correctly marked as default. (2) Profile section 6.1 now lists 18 contributing videos including yZoSW3DGRGI with a role annotation, and SKILL.md line 147 matches, restoring profile/skill sync. (3) Resources now carries a path note (line 149) stating analysis/ and data/ paths are relative to the project root with the absolute path given, addressing the auto-axis portability finding. (4) evidence.md section 5 hidden-FVG/BPR quotes now carry per-quote provenance labels (transcript / note+transcript), and the two newly added BPR transcript-supplement quotes were verified verbatim in the transcript. Quote integrity remains excellent (24 quotes verified across both review passes, zero fabrications), anti-injection is clean, contradiction tiering is now consistently applied including the no-chase rule, and scope/DRY matches profile 6.1. Only trivial nits remain; content risk is low.",
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 107,
+        "message": "Output item 4 still cites only the no-chase clause (「冇碰到就唔追」嘅放棄條款) without pointing back to the new two-option rule in Step 1.3, so an operator reading only the Output spec could miss the permitted chase-after-break alternative.",
+        "improvement": "In Output item 4, change the wording to reference Step 1.3's two-option rule (e.g. 「冇碰到就走咗→按 Step 1.3 兩選項處理，預設唔追」) so the output contract and the workflow stay aligned."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 147,
+        "message": "The yZoSW3DGRGI role annotation differs slightly between SKILL.md (流動性課程，貢獻 FVG/OB 價值判斷引文) and profile section 6.1 line 265 (FVG/跳空定義與 OB 價值需配合流動性判斷嘅原則). Both are accurate; purely cosmetic divergence in the cross-reference wording.",
+        "improvement": "Optionally align the parenthetical annotation text with profile 6.1 verbatim so future audits diff cleanly."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 90,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": false,
+    "improvement_items": [],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-ict-pd-arrays/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 107,
+        "message": "Output item 4 still cites only the no-chase clause (「冇碰到就唔追」嘅放棄條款) without pointing back to the new two-option rule in Step 1.3, so an operator reading only the Output spec could miss the permitted chase-after-break alternative.",
+        "improvement": "In Output item 4, change the wording to reference Step 1.3's two-option rule (e.g. 「冇碰到就走咗→按 Step 1.3 兩選項處理，預設唔追」) so the output contract and the workflow stay aligned.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ict-pd-arrays/SKILL.md",
+        "line": 147,
+        "message": "The yZoSW3DGRGI role annotation differs slightly between SKILL.md (流動性課程，貢獻 FVG/OB 價值判斷引文) and profile section 6.1 line 265 (FVG/跳空定義與 OB 價值需配合流動性判斷嘅原則). Both are accurate; purely cosmetic divergence in the cross-reference wording.",
+        "improvement": "Optionally align the parenthetical annotation text with profile 6.1 verbatim so future audits diff cleanly.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}

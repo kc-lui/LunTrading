@@ -146,4 +146,4 @@ PD Array 元素被上述 skill 引用時（例如掃描目標、止盈障礙物�
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（ASR 容錯對照表，讀任何引文/逐字稿必查）。
 - **Contributing videos（18，per profile §6.1）**：tCfmxMX5WaU（總綱）、xwsyfVf2l0k、ofQ--jkHTm4、whJg0lgPbFo、7dDW8tF1cZo、3Kt_ruGepB4、Q371XdV3apE、RjNBnZ59c4U、kI5idYixD50、E0PF_0XLDGo、B7rumsOw6_U、WmW5fQjK5Qg、zgVlK7UBNTY、teVdcguZs_U、aSZzhnfOVkE、7yDxPi7Roh0、_TEaFyv7-ac、yZoSW3DGRGI（流動性課程，貢獻 FVG/OB 價值判斷引文）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim，whitespace-join 可）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（`/Users/lui/workspace/LunTrading`）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

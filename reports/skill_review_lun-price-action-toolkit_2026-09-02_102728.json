@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-09-02 10:27:28",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-price-action-toolkit",
+  "skill_file": "skills/lun-price-action-toolkit/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-price-action-toolkit",
+    "skill_file": "skills/lun-price-action-toolkit/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-price-action-toolkit/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-price-action-toolkit/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-price-action-toolkit/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": false,
+    "source_file": null,
+    "score": null,
+    "summary": "",
+    "findings": []
+  },
+  "final_review": {
+    "score": 80,
+    "weights": {
+      "auto_weight": 1.0,
+      "llm_weight": 0.0
+    },
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-price-action-toolkit/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-price-action-toolkit/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-price-action-toolkit/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      }
+    ]
+  },
+  "llm_prompt_file": "/Users/lui/workspace/LunTrading/reports/skill_review_prompt_lun-price-action-toolkit_2026-09-02_102728.md"
+}

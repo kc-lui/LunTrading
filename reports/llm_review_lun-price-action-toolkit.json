@@ -1,0 +1,13 @@
+{
+  "score": 96,
+  "summary": "Re-review after revision: all three prior findings are resolved and verified. (1) The hardcoded absolute user path is gone — grep across both lun-price-action-toolkit and lun-ict-pd-arrays returns zero /Users/ occurrences; the 路徑註記 now uses a self-locating anchor (即本 skill 所在 .claude/skills/ 嘅上兩層目錄) that conveys the same project-root-relative guidance without PII or portability breakage, and the identical fix was applied to the sibling skill as recommended. (2) The harmonic table's Bat B-point row now explicitly flags the stricter same-video phrasing with a pointer to references/evidence.md, restoring the skill's own 矛盾口徑照錄 policy at the table level. (3) Limitation 2 now names the largest unverified R-multiple claim (Triple Test 一对二十, VjSB-VRyxWI) alongside the other examples. The underlying content assessment stands from the first pass: 44/44 quote verifications passed (25 note-level quotes across 16 videos, 12 harmonic XABCD ratio checks confirming every number traces to 6_5DVT6uS9E rather than generic harmonic textbooks, 7 transcript-labeled quotes verified in data/transcripts/pK6S7CEqMAk.txt), zero fabrication or injection, contradiction tiers per profile 7.3 preserved (confluence 2-3 vs 3-5, RR 1:1/1:2/1:3, MA evolution 100-day to EMA50 to 21/50/200, breakout vs pullback), and DRY boundaries cleanly deferred to sibling skills. Only trivial residue remains; content risk is low.",
+  "findings": [
+    {
+      "severity": "low",
+      "path": "skills/lun-price-action-toolkit/SKILL.md",
+      "line": 100,
+      "message": "The strategy index table row for the 13/14 strategy compendium and the harmonic single-source caveat are well handled, but the ICI row does not carry the same low-confidence marker as the harmonic row despite ICI also being a single-video self-invented pattern (OANImZtkkeM, disclosed only in limitation 4). Cosmetic inconsistency in confidence signaling within the index table.",
+      "improvement": "Append （單源） to the ICI row in the strategy index table, mirroring the harmonic row's existing marker, so single-source strategies are identifiable at the table level without reading the limitations section."
+    }
+  ]
+}
