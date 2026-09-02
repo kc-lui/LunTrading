@@ -1,0 +1,13 @@
+{
+  "score": 96,
+  "summary": "Re-review of the revised skill. All six prior findings are fixed, and the medium one is fixed thoroughly rather than minimally. Tier 1b now states that 自用 <0.25%（ryv0CUgVZCM 2025-10）and 實盤 固定 1%（MjPZizFnX-E 2026-04）are 同屬自述, six months apart, differing 4x, with the reconciliation marked （推測）, the explicit instruction 平行呈現唔裁決, and the operational rule 兩個數字必須一齊報 — and it is mirrored in the line 8 headline, the frontmatter description, 侷限聲明 1, and evidence.md §11. I re-ran the full extraction: every 「」span resolves verbatim against the corpus except three literal marker names (「(transcript)」×2, 「自述，未對帳」), so brackets are now corpus-only; there are zero attribution failures in either file. The 31 (transcript) markers added are real: I checked all 38 transcript-labelled quotes against the cited video's raw transcript and every one is present in the correct file, including the six load-bearing caliber quotes (「我每天每一單的風險其實少過0.25%的」in ryv0CUgVZCM, 「每一筆就是1%到2%的風險」and 「我不管你用1%還是2%,記住,定了,就不要再改」in HeQiNekCZng, 「單比風險你可以用1%或者是2%、3%都OK。」in fLN20X1dP48, 「如果你的單比風險是0.25%的話」in rE21_onS0uo, 「今天這支影片我們會用R來代替,一個R代表1%」in MjPZizFnX-E). The 漸進口徑 routing contradiction is resolved bilaterally at lines 28, 80 and 146; shared-quote pointers were added at evidence.md:74 and :80, the latter with a candid note that the quote is a note-merged pair verified segment by segment; and 侷限聲明 7 now documents the deliberate ledger-over-profile deviation. Regression checks are clean: all 15 dates in the evidence roster match the notes' 日期 metadata, all textbook terms remain confined to the three ban fences, and the contributing set is still exactly 31 videos. One low residual remains.",
+  "findings": [
+    {
+      "severity": "low",
+      "path": "skills/lun-risk-management/SKILL.md",
+      "line": 91,
+      "message": "Four (transcript)-labelled quotes carry no video id on their own line — the two 倉位公式 quotes 「那個Formula,就是你的資金再乘以0.01…」and 「你就要用你可以虧損的金額,再除以你的止损點」at SKILL.md:91 and again at references/evidence.md:53-54. The id is inferable only from the section headers (Step 4 — 倉位計算公式（hkCvRoLc3Nk） and evidence §3). I confirmed both quotes exist verbatim in data/transcripts/hkCvRoLc3Nk.txt, so the content and the (transcript) label are both correct; the attribution simply is not checkable from the line itself, unlike the other 38 transcript-labelled quotes.",
+      "improvement": "Append （hkCvRoLc3Nk）after each of the four quotes so every (transcript) claim is verifiable without relying on section context, matching the inline-id style used throughout the rest of both files."
+    }
+  ]
+}

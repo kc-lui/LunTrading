@@ -64,3 +64,8 @@
 - **唔覆蓋**：一般風險%（→ lun-risk-management）、考試系統規則本體（→ lun-price-action-toolkit）、TP/SL 放置（→ lun-exit-management）、時段（→ lun-kill-zones-timing）。
 - **DRY anchor**：考試規則、資金盤路線比較、贊助內容隔離規範由本 skill 持有。
 
+### 10. lun-risk-management ✅ 90/100（2026-09-02，auto 80 / LLM 96，round 2）
+- **覆蓋**：資金/風險層 — 防守哲學、倉位公式（資金×風險%÷止損點數）、單筆風險三口徑平行呈現（教學 1–2% / 自用 <0.25% / 實盤 1R=1%，Tier 1a+1b 唔裁決、必須一齊報）、等額風險鐵律＋大回撤唯一例外、連虧降倉、30% 停手出金、本金 10–30% 配置、「不熟,不做」、頻率即風控（月 3–5 筆）、大盈虧比連虧保險數學、錯誤目錄 E/F/M/K 帶逐項路由。教科書公式（Kelly/VaR/ATR sizing）ban-fenced。
+- **唔覆蓋**：SL/TP 放置（→ lun-exit-management）、prop firm 情境上限（→ lun-prop-firm-playbook）、RR 門檻分層（→ lun-exit-management，侷限聲明 7 已披露同 profile §6.10 嘅偏離）、心理項目（→ lun-trading-psychology）。
+- **DRY anchor**：「虧幾多、開幾大、幾時停」由本 skill 持有。
+

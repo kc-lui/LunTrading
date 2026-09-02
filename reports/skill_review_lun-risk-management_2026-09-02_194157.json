@@ -1,0 +1,162 @@
+{
+  "generated_at": "2026-09-02 19:41:57",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-risk-management",
+  "skill_file": "skills/lun-risk-management/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-risk-management",
+    "skill_file": "skills/lun-risk-management/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-risk-management/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-risk-management/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-risk-management.json",
+    "score": 93,
+    "summary": "Mechanically this is the cleanest skill in the set. I extracted all 「」spans from both files and checked them two ways: every corpus quote resolves verbatim against analysis/video_notes/, there are zero attribution failures (no quote assigned to a video that does not contain it), and 206 of 208 corpus-resolved quotes also appear verbatim in data/transcripts/ — the two exceptions are editorial labels, not quotes. All 14 dates in the evidence.md date roster match the 日期 metadata in the notes exactly, including the contemporaneity pair the caliber analysis rests on (HeQiNekCZng 2026-01-25 teaching 1–2%, ryv0CUgVZCM 2025-10-02 self-reporting <0.25%). The contributing-video set is exactly the 31 named in profile §6.10, all 31 are actually cited, and none is out of scope. Anti-injection is airtight: Kelly, VaR, fixed-fractional/fixed-ratio, ATR sizing, portfolio heat, correlation models and Monte Carlo appear only inside the three explicit ban fences (Prerequisites #1, 侷限 #5, evidence §11) and nowhere else. The 倉位公式 and 連虧22單 mathematics both trace to verbatim corpus quotes, and the E/F/M/K mistake catalog ids map correctly to s4on4yJCLII / T2Nk46EqAh4 / H3OZxavXlsk / k0ESC6XYz50 with psychology-owned items routed to lun-trading-psychology（生成中）. DRY routing is mostly surgical and explicitly bridged. What holds it below a pass is the centerpiece: the skill headlines a 4–8x gap between what he teaches (1–2%) and what he 'actually uses' (<0.25%), but its own 實盤口徑 row shows the most recent self-reported live figure (MjPZizFnX-E, 2026-04) is a fixed 1% — a 4x conflict between two self-reported own-risk numbers that the skill never surfaces, even though surfacing contradictions as parallel tiers is the project's governing convention. Five low findings follow, including a self-declared bracket rule the skill breaks eight times.",
+    "findings": [
+      {
+        "severity": "medium",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 8,
+        "message": "The skill's advertised 核心發現 — 「佢教觀眾嘅單筆風險（1%–2%）同佢自己實際用嘅（<0.25%）相差 4–8 倍」 — is undercut by the skill's own Step 3 table. The 實盤口徑 row cites MjPZizFnX-E (2026-04-11), whose note records 每筆風險固定 1%（1R = 1%）, backed by the verbatim 「今天這支影片我們會用R來代替,一個R代表1%」. So the most recent self-reported own-trading figure equals the teaching caliber's floor, not <0.25%. The analysis at line 83 compares only 教學 (2026-01) against 自用 (2025-10) to conclude 唔係演化係分層, and never addresses that 自用 <0.25% (2025-10) and 實盤 1% (2026-04) are two self-reported own-risk numbers six months apart differing 4x. Under the convention that corpus contradictions are presented as parallel tiers rather than smoothed, this one is left unremarked, and a consumer of the skill would tell a user 'he teaches 1–2% but actually risks <0.25%' — which the skill's own most recent evidence contradicts.",
+        "improvement": "Add the 自用-vs-實盤 tension as an explicit tier: in Step 3 after line 83, state that 自用口徑 <0.25%（ryv0CUgVZCM 2025-10）同 實盤口徑 1%（MjPZizFnX-E 2026-04）本身亦有 4 倍差距、同屬自述且相隔 6 個月，平行呈現唔裁決. Reword the line 8 summary to 「教學口徑（1%–2%）同佢自述最低嘅自用口徑（<0.25%）相差 4–8 倍，而最近一次實盤覆盤（2026-04）用嘅係固定 1%」. Mirror the addition in 侷限聲明 1 and in references/evidence.md §11 Tier 1, which currently names only the 教學-vs-自用 pair."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 39,
+        "message": "Prerequisites #4 states the rule 「編輯標籤（如**教學口徑**／**自用口徑**）用粗體唔入「」」, then the skill breaks it eight times. The only 「」spans in either file that do not resolve verbatim against the corpus are all editorial labels: line 37 「教學口徑 vs 自用口徑」and 「佢教 1–2% 所以用 1–2%」, line 26 「止損 30 點上限」, line 58 「虧幾多、開幾大、幾時停」, line 101 「連虧 5 單砍半」(the corpus form is 「連虧5單之後�我一定把風險砍一半」), line 124 「過度盯盤→過度交易」, plus references/evidence.md:123 「過度盯盤→過度交易→忽略風險」and evidence.md:132 「嚴格執行風險管理」. This is the exact ambiguity the rule exists to prevent, and the identical issue was raised and fixed on the sibling lun-prop-firm-playbook.",
+        "improvement": "Convert all eight to bold or plain text so 「」remains corpus-only, matching the discipline the file itself mandates and the convention now applied in lun-prop-firm-playbook."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 165,
+        "message": "Resources declares 「引用必須 verbatim；標「(transcript)」者為直接覆核」, but neither SKILL.md nor references/evidence.md contains a single (transcript) marker, so no quote in this skill is flagged as transcript-verified. Every sibling skill reviewed so far carries them. I independently confirmed the underlying fidelity is fine — 206 of 208 corpus-resolved quotes appear verbatim in data/transcripts/ — so this is a missing verification signal rather than a correctness defect, but it means a downstream reader cannot tell note-sourced text from transcript-confirmed text.",
+        "improvement": "Tag the load-bearing numeric quotes with (transcript) after confirming them against the raw files — at minimum 「我每天每一單的風險其實少過0.25%的」(ryv0CUgVZCM), 「每一筆就是1%到2%的風險」(HeQiNekCZng), 「單比風險你可以用1%或者是2%、3%都OK。」(fLN20X1dP48), 「那個Formula,就是你的資金再乘以0.01…」(hkCvRoLc3Nk), 「我要連虧22單,我才會回到原點」(WmW5fQjK5Qg), and 「每一筆風險的大小要一樣」(54WCm_VBYfY); all six are present verbatim in their transcripts."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 28,
+        "message": "The routing table contradicts Step 3 on the 漸進口徑. Line 28 lists 新系統起步 0.25% among the items that belong to lun-prop-firm-playbook, and the 邊界 table at line 145 repeats 起步 0.25% as not covered — yet Step 3 line 80 holds 漸進口徑 0.25% → 1% as caliber #3 of this skill's four-caliber centerpiece. The supporting quote (rE21_onS0uo) is itself set in a prop-firm context (新系統/啱啱接觸機構交易, under a 10% max-loss limit), so a reader following the routing table would route caliber #3 out of the skill that presents it as core.",
+        "improvement": "Reword lines 28 and 145 to route only the prop-firm scenario application (考試 1%、撥資 ≤1%、唔過夜) and state explicitly that the 0.25%→1% 漸進 baseline stays in this skill as caliber #3, or conversely drop caliber #3 and cite it as a bridge. Either resolution works; the two statements must stop contradicting each other."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/references/evidence.md",
+        "line": 70,
+        "message": "Cross-skill quote overlap is mostly disclosed with explicit pointers — RR↔勝率 → lun-exit-management (evidence:79), 止損寬窄 → lun-exit-management (evidence:51), 大資金態度 → lun-prop-firm-playbook (evidence:99), 模擬練習 → lun-backtesting-method (evidence:95), 撥資 ≤1% → lun-prop-firm-playbook (evidence:45). Two are not: 「也就代表你就要可以接受連續虧損的情況出現,還有連續Break Even的單子出現」(evidence:70) and 「我只需要有一單盈利。基本上就可以把我所有的Losses cover掉」(evidence:76) both also appear in lun-exit-management with no pointer here.",
+        "improvement": "Append the same style of pointer used on neighbouring bullets — （亦見 lun-exit-management，本節只作連虧承受層引用）— to both bullets so every shared quote is disclosed."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 151,
+        "message": "The skill silently deviates from profile §6.10, which assigns 最低盈虧比門檻（1:1/1:2/1:3 按情境）and prop firm ≤1% to lun-risk-management's scope. The skill instead defers both to lun-exit-management and lun-prop-firm-playbook, following analysis/skill_boundary_ledger.md entries 7 and 9. That is the correct call — the ledger is the DRY authority and both siblings passed first — but the deviation is undocumented, so a future author reconciling the skill against the profile could 'restore' the overlap.",
+        "improvement": "Add a 侷限聲明 item noting that profile §6.10 nominally scoped RR 門檻分層 and prop firm ≤1% to this skill, but the boundary ledger assigns them to lun-exit-management and lun-prop-firm-playbook respectively, and the ledger governs."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 88,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": true,
+    "improvement_items": [
+      "The skill's advertised 核心發現 — 「佢教觀眾嘅單筆風險（1%–2%）同佢自己實際用嘅（<0.25%）相差 4–8 倍」 — is undercut by the skill's own Step 3 table. The 實盤口徑 row cites MjPZizFnX-E (2026-04-11), whose note records 每筆風險固定 1%（1R = 1%）, backed by the verbatim 「今天這支影片我們會用R來代替,一個R代表1%」. So the most recent self-reported own-trading figure equals the teaching caliber's floor, not <0.25%. The analysis at line 83 compares only 教學 (2026-01) against 自用 (2025-10) to conclude 唔係演化係分層, and never addresses that 自用 <0.25% (2025-10) and 實盤 1% (2026-04) are two self-reported own-risk numbers six months apart differing 4x. Under the convention that corpus contradictions are presented as parallel tiers rather than smoothed, this one is left unremarked, and a consumer of the skill would tell a user 'he teaches 1–2% but actually risks <0.25%' — which the skill's own most recent evidence contradicts. -> Add the 自用-vs-實盤 tension as an explicit tier: in Step 3 after line 83, state that 自用口徑 <0.25%（ryv0CUgVZCM 2025-10）同 實盤口徑 1%（MjPZizFnX-E 2026-04）本身亦有 4 倍差距、同屬自述且相隔 6 個月，平行呈現唔裁決. Reword the line 8 summary to 「教學口徑（1%–2%）同佢自述最低嘅自用口徑（<0.25%）相差 4–8 倍，而最近一次實盤覆盤（2026-04）用嘅係固定 1%」. Mirror the addition in 侷限聲明 1 and in references/evidence.md §11 Tier 1, which currently names only the 教學-vs-自用 pair.",
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-risk-management/references/...` — SKILL.md is loaded in the skill directory context.",
+      "Prerequisites #4 states the rule 「編輯標籤（如**教學口徑**／**自用口徑**）用粗體唔入「」」, then the skill breaks it eight times. The only 「」spans in either file that do not resolve verbatim against the corpus are all editorial labels: line 37 「教學口徑 vs 自用口徑」and 「佢教 1–2% 所以用 1–2%」, line 26 「止損 30 點上限」, line 58 「虧幾多、開幾大、幾時停」, line 101 「連虧 5 單砍半」(the corpus form is 「連虧5單之後�我一定把風險砍一半」), line 124 「過度盯盤→過度交易」, plus references/evidence.md:123 「過度盯盤→過度交易→忽略風險」and evidence.md:132 「嚴格執行風險管理」. This is the exact ambiguity the rule exists to prevent, and the identical issue was raised and fixed on the sibling lun-prop-firm-playbook. -> Convert all eight to bold or plain text so 「」remains corpus-only, matching the discipline the file itself mandates and the convention now applied in lun-prop-firm-playbook.",
+      "Resources declares 「引用必須 verbatim；標「(transcript)」者為直接覆核」, but neither SKILL.md nor references/evidence.md contains a single (transcript) marker, so no quote in this skill is flagged as transcript-verified. Every sibling skill reviewed so far carries them. I independently confirmed the underlying fidelity is fine — 206 of 208 corpus-resolved quotes appear verbatim in data/transcripts/ — so this is a missing verification signal rather than a correctness defect, but it means a downstream reader cannot tell note-sourced text from transcript-confirmed text. -> Tag the load-bearing numeric quotes with (transcript) after confirming them against the raw files — at minimum 「我每天每一單的風險其實少過0.25%的」(ryv0CUgVZCM), 「每一筆就是1%到2%的風險」(HeQiNekCZng), 「單比風險你可以用1%或者是2%、3%都OK。」(fLN20X1dP48), 「那個Formula,就是你的資金再乘以0.01…」(hkCvRoLc3Nk), 「我要連虧22單,我才會回到原點」(WmW5fQjK5Qg), and 「每一筆風險的大小要一樣」(54WCm_VBYfY); all six are present verbatim in their transcripts.",
+      "The routing table contradicts Step 3 on the 漸進口徑. Line 28 lists 新系統起步 0.25% among the items that belong to lun-prop-firm-playbook, and the 邊界 table at line 145 repeats 起步 0.25% as not covered — yet Step 3 line 80 holds 漸進口徑 0.25% → 1% as caliber #3 of this skill's four-caliber centerpiece. The supporting quote (rE21_onS0uo) is itself set in a prop-firm context (新系統/啱啱接觸機構交易, under a 10% max-loss limit), so a reader following the routing table would route caliber #3 out of the skill that presents it as core. -> Reword lines 28 and 145 to route only the prop-firm scenario application (考試 1%、撥資 ≤1%、唔過夜) and state explicitly that the 0.25%→1% 漸進 baseline stays in this skill as caliber #3, or conversely drop caliber #3 and cite it as a bridge. Either resolution works; the two statements must stop contradicting each other.",
+      "Cross-skill quote overlap is mostly disclosed with explicit pointers — RR↔勝率 → lun-exit-management (evidence:79), 止損寬窄 → lun-exit-management (evidence:51), 大資金態度 → lun-prop-firm-playbook (evidence:99), 模擬練習 → lun-backtesting-method (evidence:95), 撥資 ≤1% → lun-prop-firm-playbook (evidence:45). Two are not: 「也就代表你就要可以接受連續虧損的情況出現,還有連續Break Even的單子出現」(evidence:70) and 「我只需要有一單盈利。基本上就可以把我所有的Losses cover掉」(evidence:76) both also appear in lun-exit-management with no pointer here. -> Append the same style of pointer used on neighbouring bullets — （亦見 lun-exit-management，本節只作連虧承受層引用）— to both bullets so every shared quote is disclosed.",
+      "The skill silently deviates from profile §6.10, which assigns 最低盈虧比門檻（1:1/1:2/1:3 按情境）and prop firm ≤1% to lun-risk-management's scope. The skill instead defers both to lun-exit-management and lun-prop-firm-playbook, following analysis/skill_boundary_ledger.md entries 7 and 9. That is the correct call — the ledger is the DRY authority and both siblings passed first — but the deviation is undocumented, so a future author reconciling the skill against the profile could 'restore' the overlap. -> Add a 侷限聲明 item noting that profile §6.10 nominally scoped RR 門檻分層 and prop firm ≤1% to this skill, but the boundary ledger assigns them to lun-exit-management and lun-prop-firm-playbook respectively, and the ledger governs."
+    ],
+    "findings": [
+      {
+        "severity": "medium",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 8,
+        "message": "The skill's advertised 核心發現 — 「佢教觀眾嘅單筆風險（1%–2%）同佢自己實際用嘅（<0.25%）相差 4–8 倍」 — is undercut by the skill's own Step 3 table. The 實盤口徑 row cites MjPZizFnX-E (2026-04-11), whose note records 每筆風險固定 1%（1R = 1%）, backed by the verbatim 「今天這支影片我們會用R來代替,一個R代表1%」. So the most recent self-reported own-trading figure equals the teaching caliber's floor, not <0.25%. The analysis at line 83 compares only 教學 (2026-01) against 自用 (2025-10) to conclude 唔係演化係分層, and never addresses that 自用 <0.25% (2025-10) and 實盤 1% (2026-04) are two self-reported own-risk numbers six months apart differing 4x. Under the convention that corpus contradictions are presented as parallel tiers rather than smoothed, this one is left unremarked, and a consumer of the skill would tell a user 'he teaches 1–2% but actually risks <0.25%' — which the skill's own most recent evidence contradicts.",
+        "improvement": "Add the 自用-vs-實盤 tension as an explicit tier: in Step 3 after line 83, state that 自用口徑 <0.25%（ryv0CUgVZCM 2025-10）同 實盤口徑 1%（MjPZizFnX-E 2026-04）本身亦有 4 倍差距、同屬自述且相隔 6 個月，平行呈現唔裁決. Reword the line 8 summary to 「教學口徑（1%–2%）同佢自述最低嘅自用口徑（<0.25%）相差 4–8 倍，而最近一次實盤覆盤（2026-04）用嘅係固定 1%」. Mirror the addition in 侷限聲明 1 and in references/evidence.md §11 Tier 1, which currently names only the 教學-vs-自用 pair.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-risk-management/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 39,
+        "message": "Prerequisites #4 states the rule 「編輯標籤（如**教學口徑**／**自用口徑**）用粗體唔入「」」, then the skill breaks it eight times. The only 「」spans in either file that do not resolve verbatim against the corpus are all editorial labels: line 37 「教學口徑 vs 自用口徑」and 「佢教 1–2% 所以用 1–2%」, line 26 「止損 30 點上限」, line 58 「虧幾多、開幾大、幾時停」, line 101 「連虧 5 單砍半」(the corpus form is 「連虧5單之後�我一定把風險砍一半」), line 124 「過度盯盤→過度交易」, plus references/evidence.md:123 「過度盯盤→過度交易→忽略風險」and evidence.md:132 「嚴格執行風險管理」. This is the exact ambiguity the rule exists to prevent, and the identical issue was raised and fixed on the sibling lun-prop-firm-playbook.",
+        "improvement": "Convert all eight to bold or plain text so 「」remains corpus-only, matching the discipline the file itself mandates and the convention now applied in lun-prop-firm-playbook.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 165,
+        "message": "Resources declares 「引用必須 verbatim；標「(transcript)」者為直接覆核」, but neither SKILL.md nor references/evidence.md contains a single (transcript) marker, so no quote in this skill is flagged as transcript-verified. Every sibling skill reviewed so far carries them. I independently confirmed the underlying fidelity is fine — 206 of 208 corpus-resolved quotes appear verbatim in data/transcripts/ — so this is a missing verification signal rather than a correctness defect, but it means a downstream reader cannot tell note-sourced text from transcript-confirmed text.",
+        "improvement": "Tag the load-bearing numeric quotes with (transcript) after confirming them against the raw files — at minimum 「我每天每一單的風險其實少過0.25%的」(ryv0CUgVZCM), 「每一筆就是1%到2%的風險」(HeQiNekCZng), 「單比風險你可以用1%或者是2%、3%都OK。」(fLN20X1dP48), 「那個Formula,就是你的資金再乘以0.01…」(hkCvRoLc3Nk), 「我要連虧22單,我才會回到原點」(WmW5fQjK5Qg), and 「每一筆風險的大小要一樣」(54WCm_VBYfY); all six are present verbatim in their transcripts.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 28,
+        "message": "The routing table contradicts Step 3 on the 漸進口徑. Line 28 lists 新系統起步 0.25% among the items that belong to lun-prop-firm-playbook, and the 邊界 table at line 145 repeats 起步 0.25% as not covered — yet Step 3 line 80 holds 漸進口徑 0.25% → 1% as caliber #3 of this skill's four-caliber centerpiece. The supporting quote (rE21_onS0uo) is itself set in a prop-firm context (新系統/啱啱接觸機構交易, under a 10% max-loss limit), so a reader following the routing table would route caliber #3 out of the skill that presents it as core.",
+        "improvement": "Reword lines 28 and 145 to route only the prop-firm scenario application (考試 1%、撥資 ≤1%、唔過夜) and state explicitly that the 0.25%→1% 漸進 baseline stays in this skill as caliber #3, or conversely drop caliber #3 and cite it as a bridge. Either resolution works; the two statements must stop contradicting each other.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/references/evidence.md",
+        "line": 70,
+        "message": "Cross-skill quote overlap is mostly disclosed with explicit pointers — RR↔勝率 → lun-exit-management (evidence:79), 止損寬窄 → lun-exit-management (evidence:51), 大資金態度 → lun-prop-firm-playbook (evidence:99), 模擬練習 → lun-backtesting-method (evidence:95), 撥資 ≤1% → lun-prop-firm-playbook (evidence:45). Two are not: 「也就代表你就要可以接受連續虧損的情況出現,還有連續Break Even的單子出現」(evidence:70) and 「我只需要有一單盈利。基本上就可以把我所有的Losses cover掉」(evidence:76) both also appear in lun-exit-management with no pointer here.",
+        "improvement": "Append the same style of pointer used on neighbouring bullets — （亦見 lun-exit-management，本節只作連虧承受層引用）— to both bullets so every shared quote is disclosed.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-risk-management/SKILL.md",
+        "line": 151,
+        "message": "The skill silently deviates from profile §6.10, which assigns 最低盈虧比門檻（1:1/1:2/1:3 按情境）and prop firm ≤1% to lun-risk-management's scope. The skill instead defers both to lun-exit-management and lun-prop-firm-playbook, following analysis/skill_boundary_ledger.md entries 7 and 9. That is the correct call — the ledger is the DRY authority and both siblings passed first — but the deviation is undocumented, so a future author reconciling the skill against the profile could 'restore' the overlap.",
+        "improvement": "Add a 侷限聲明 item noting that profile §6.10 nominally scoped RR 門檻分層 and prop firm ≤1% to this skill, but the boundary ledger assigns them to lun-exit-management and lun-prop-firm-playbook respectively, and the ledger governs.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}
