@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-09-03 00:37:19",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-trading-psychology",
+  "skill_file": "skills/lun-trading-psychology/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-trading-psychology",
+    "skill_file": "skills/lun-trading-psychology/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-trading-psychology.json",
+    "score": 97,
+    "summary": "Re-review of the revised skill; all five prior findings are fixed and no findings remain. The medium is resolved at the root rather than patched: both elided quotes are restored to full verbatim and I confirmed each against its transcript — 「但是深層的Y,那種最深層的Y,會給你一個穩定」is present in data/transcripts/ryv0CUgVZCM.txt and 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候」in H3OZxavXlsk.txt — and Prerequisites #5 now carries an explicit prohibition (「」內禁止用「…」省略字詞) together with the split-span remedy, so the defect class cannot recur. A scan for ellipsis inside brackets across both files returns only the rule text itself. Attribution is now fully local: inline ids were appended at all four flagged spots (SKILL.md:81/129/139 and evidence.md:52), and the per-line attribution check reports zero failures — the MBTI NFP/NTJ pair on line 129 now carries （oiULdfvMlYY）beside the （0a4NrcfAPJU）ENFJ citation, so the conflict is checkable in place. Every editorial span is now bold; the only remaining non-corpus 「」spans are five literal marker names (「(transcript)」, 「講者轉述研究，未核對原論文」, 「講者自述前後不一」), matching the accepted convention across the sibling skills. The contributing count is reconciled with an explicit non-contributing disclosure for PypFn7GaVfE naming the single quote it supplies, and the MBTI ASR handling is now symmetric: Paul Tudels-Jones/Stanley Drunken Miller/Jim Simon are entered in the Prerequisites #4 table, the ASR forms appear inline in both files, and Buffett's dropped qualifier is restored verbatim as (transcript)「巴菲特 INTJ」「有時候是ENTJ」「但取決他當下需要達到什麼樣的目的」. Regression checks are clean: 53 (transcript)-labelled quotes verbatim-verified (up from 49), 13/13 evidence-roster dates match the notes' metadata, textbook-psychology and biography-video terms remain confined to their three ban fences, the two 10-habit lists remain a 10-row parallel no-merge table, and the Step 10 handoff still complements lun-risk-management Step 8 exactly.",
+    "findings": []
+  },
+  "final_review": {
+    "score": 91,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": false,
+    "improvement_items": [],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}

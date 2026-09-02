@@ -69,3 +69,12 @@
 - **唔覆蓋**：SL/TP 放置（→ lun-exit-management）、prop firm 情境上限（→ lun-prop-firm-playbook）、RR 門檻分層（→ lun-exit-management，侷限聲明 7 已披露同 profile §6.10 嘅偏離）、心理項目（→ lun-trading-psychology）。
 - **DRY anchor**：「虧幾多、開幾大、幾時停」由本 skill 持有。
 
+### 11. lun-trading-psychology ✅ 91/100（2026-09-03，auto 80 / LLM 97，round 2）
+- **覆蓋**：行為/動機/性格層 — 敵人係大腦、三層 WHY、概率思維＋無偏差執行、五特質、10 習慣 2024/2026 雙版本平行、情緒＝訊號、FOMO/報復性/過度自信攔截、mental capital、行為金融轉述（講者轉述研究未核對原論文）、MBTI 類型（自述前後不一照錄）、7 教訓、承接 lun-risk-management Step 8 嘅 F/E/M 心理項目。傳記影片內容為禁區。
+- **唔覆蓋**：風險%數字（→ lun-risk-management）、記錄工具（→ lun-backtesting-method）、出場（→ lun-exit-management）。
+- **DRY anchor**：一切「點解會咁做/點改習慣」嘅行為層問題由本 skill 持有。
+
+---
+
+## 最終狀態：11/11 skills 全部通過 ≥90 gate（2026-09-03）
+

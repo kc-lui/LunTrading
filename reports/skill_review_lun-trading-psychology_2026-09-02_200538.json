@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-09-02 20:05:38",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-trading-psychology",
+  "skill_file": "skills/lun-trading-psychology/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-trading-psychology",
+    "skill_file": "skills/lun-trading-psychology/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-trading-psychology.json",
+    "score": 93,
+    "summary": "A strong close to the 11-skill set, and the hardest one to keep grounded given how easily trading psychology invites textbook filler — that temptation is resisted completely. Anti-injection is airtight: Mark Douglas/Trading in the Zone, generic CBT/正念, prospect theory/loss aversion, NLP, and the Kovner/Seykota/Marcus biography videos appear only inside the three ban fences (Prerequisites #1, #3, 侷限 #6) and nowhere else, and the one book the speaker actually cites is held to 照錄轉述 with the ASR form 「Untreated Soul」preserved. I verified the biography exception rather than trusting it: all six MBTI names are genuinely in oiULdfvMlYY's transcript (George Soros INTJ, 'Paul Tudels-Jones' ENTJ, 'Stanley Drunken Miller' ENTJ, 'Jim Simon' INTJ, 巴菲特 INTJ, Richard Dennis ENTJ), so the in-corpus carve-out is legitimate. 49 of 50 (transcript)-labelled quotes are verbatim in the cited transcripts (the 50th is the literal marker name), and all 13 dates in the evidence roster match the notes' 日期 metadata exactly. The two 10-habit lists check out against both notes as genuinely different lists and are presented as a parallel table with an explicit 唔好合併 instruction and a year-labelling requirement. The MBTI self-report conflict is presented 前後不一 with both self-reports side by side and no adjudication, following profile §1.3's instruction verbatim. OnjOO0QyVUU's statistics are fenced as 講者轉述研究未核對原論文 in four separate places, the 退群/教練社群/孤獨 reconciliation is marked 推測 in both Step 6 and 侷限 7, and the Step 10 handoff exactly complements lun-risk-management Step 8 — receiving E07, E10, F01–F03, M01–M03 and M06 while explicitly leaving M04/M05 behind. What holds it below a pass: two quotes use ellipsis elision inside 「」 and are therefore not verbatim, breaching the skill's own Prerequisites #5, plus four low findings.",
+    "findings": [
+      {
+        "severity": "medium",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 67,
+        "message": "Two 「」spans present elided text as verbatim, using 「…」 to skip words. SKILL.md:67 renders 「深層的Y…會給你一個穩定」, but ryv0CUgVZCM reads 「旁邊的Y,會給你方向。但是深層的Y,那種最深層的Y,會給你一個穩定。」 — the phrase ',那種最深層的Y,' is silently dropped. references/evidence.md:155 renders 「就算再厲害的交易者也好…他們也會有虧錢的時候」, but H3OZxavXlsk reads 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候。」 — ',再有經驗的交易者也好,' is dropped. Neither elision changes the meaning, but both violate Prerequisites #5 (「」內文字必須照錄筆記/逐字稿原文) and they are the only two spans in either file that contain real corpus text yet fail a verbatim check. A mechanical verifier of the kind this project relies on flags both as missing from the corpus.",
+        "improvement": "Restore the full text in both places, or split each into two separate bracketed spans joined by unquoted connective text — e.g. 「但是深層的Y,那種最深層的Y,會給你一個穩定。」and 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候。」 Then add a line to Prerequisites #5 stating that ellipsis elision inside 「」 is not permitted, so the rule is explicit for future authors."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 129,
+        "message": "Ten quotes across four lines have their owning video id absent from the line while a different id appears later on the same line, making attribution uncheckable in place. SKILL.md:129 gives the (transcript)-labelled 「我是NFP型的」「是非常非常不適合做交易」「我已經是一個NTJ型了」, all from oiULdfvMlYY via the Step 8 header, while the only id written on the line is 0a4NrcfAPJU (correctly attached to the ENFJ quote). SKILL.md:81 and evidence.md:52 do the same with 「你沒有欠市場任何東西,市場也沒有欠你任何東西」and 「當你把專注力放在你可以控制的事情上面的話,你就不會再焦慮了」(54WCm_VBYfY via the Step 4 header, with T2Nk46EqAh4 written on the line). SKILL.md:139 does it with 「很多人赚到钱后就飘了」and 「可能就只是纯粹运气好」(jlO3771JF1E via the Step 9 header, with mDpbsw81ftI written on the line). I confirmed every quote is correct against its true source; the problem is discoverability, and it is most acute on line 129 because that is precisely the MBTI conflict a reader is asked to audit.",
+        "improvement": "Append the owning id inline at each spot — （oiULdfvMlYY）after the NFP/NTJ quotes on line 129, （54WCm_VBYfY）after the two responsibility quotes on SKILL.md:81 and evidence.md:52, and （jlO3771JF1E）after the two defence quotes on line 139 — matching the inline-id style used elsewhere in both files."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 26,
+        "message": "Prerequisites #5 mandates 編輯標籤用粗體唔入「」, but several editorial labels remain in corner brackets: line 26 「虧幾多開幾大幾時停」(the sibling lun-risk-management now renders this same phrase in bold), line 101 「佢嘅 10 習慣」, lines 129 and 183 「NFP→NTJ」, and line 187 「退群 vs 教練社群 vs 孤獨」. Together with the two elided quotes these are the only non-corpus 「」spans in the skill, so brackets no longer reliably signal verbatim text. The identical issue was raised and fixed on both lun-prop-firm-playbook and lun-risk-management.",
+        "improvement": "Convert all five to bold, leaving 「」 for corpus text plus the two literal marker names (「(transcript)」, 「講者轉述研究，未核對原論文」), consistent with the convention now applied across the sibling skills."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 193,
+        "message": "Resources declares 「Contributing videos（27，per profile §6.11）」and lists 27 ids, but the skill actually cites 28 videos. The extra is PypFn7GaVfE, used for the balancing 平衡視角 at SKILL.md:63 and evidence.md:20 (「是不是市場的節奏改變了」). The citation is legitimate — the quote is verbatim in that video and the skill routes it honestly as 'via profile §3.13', which resolves correctly to section 3 item 13 of the profile under this project's numbering convention — but it sits outside the declared contributing set, so the stated count and the actual footprint disagree. For comparison, lun-risk-management's declared 31 matches its cited 31 exactly.",
+        "improvement": "Either state 「Contributing videos（27＋PypFn7GaVfE 經 profile §3 第 13 項引用嘅平衡視角，非 contributing）」or add PypFn7GaVfE to the list and update the count to 28, so the declared scope matches what the skill actually cites."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 127,
+        "message": "ASR discipline is applied unevenly to the MBTI trader names. references/evidence.md:123 correctly records the ASR forms 「Paul Tudels-Jones」and 「Stanley Drunken Miller」(＝Druckenmiller), but SKILL.md:127 lists only the corrected names (Paul Tudor Jones, Druckenmiller, Simons) with no ASR flag and no entry in the Prerequisites #4 correction table — even though that table meticulously records comparable corrections elsewhere, and Prerequisites #2 explicitly flags the analogous 「Barber & Odin」→Barber & Odean case. Two smaller precision losses ride along: the transcript says 'Jim Simon' (no s), rendered 'Jim Simons' in both files without a marker, and the speaker's qualifier on 巴菲特 — 「巴菲特 INTJ|有時候是ENTJ|但取決他當下需要達到什麼樣的目的」 — is dropped in both files, leaving a flat 'INTJ'.",
+        "improvement": "Add Paul Tudels-Jones＝Paul Tudor Jones、Stanley Drunken Miller＝Stanley Druckenmiller、Jim Simon＝Jim Simons to the Prerequisites #4 ASR table, and restore the Buffett qualifier as 巴菲特 INTJ（片中補充「有時候是ENTJ」，視乎目的）in Step 8 and evidence.md §8."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 88,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": true,
+    "improvement_items": [
+      "Two 「」spans present elided text as verbatim, using 「…」 to skip words. SKILL.md:67 renders 「深層的Y…會給你一個穩定」, but ryv0CUgVZCM reads 「旁邊的Y,會給你方向。但是深層的Y,那種最深層的Y,會給你一個穩定。」 — the phrase ',那種最深層的Y,' is silently dropped. references/evidence.md:155 renders 「就算再厲害的交易者也好…他們也會有虧錢的時候」, but H3OZxavXlsk reads 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候。」 — ',再有經驗的交易者也好,' is dropped. Neither elision changes the meaning, but both violate Prerequisites #5 (「」內文字必須照錄筆記/逐字稿原文) and they are the only two spans in either file that contain real corpus text yet fail a verbatim check. A mechanical verifier of the kind this project relies on flags both as missing from the corpus. -> Restore the full text in both places, or split each into two separate bracketed spans joined by unquoted connective text — e.g. 「但是深層的Y,那種最深層的Y,會給你一個穩定。」and 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候。」 Then add a line to Prerequisites #5 stating that ellipsis elision inside 「」 is not permitted, so the rule is explicit for future authors.",
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context.",
+      "Ten quotes across four lines have their owning video id absent from the line while a different id appears later on the same line, making attribution uncheckable in place. SKILL.md:129 gives the (transcript)-labelled 「我是NFP型的」「是非常非常不適合做交易」「我已經是一個NTJ型了」, all from oiULdfvMlYY via the Step 8 header, while the only id written on the line is 0a4NrcfAPJU (correctly attached to the ENFJ quote). SKILL.md:81 and evidence.md:52 do the same with 「你沒有欠市場任何東西,市場也沒有欠你任何東西」and 「當你把專注力放在你可以控制的事情上面的話,你就不會再焦慮了」(54WCm_VBYfY via the Step 4 header, with T2Nk46EqAh4 written on the line). SKILL.md:139 does it with 「很多人赚到钱后就飘了」and 「可能就只是纯粹运气好」(jlO3771JF1E via the Step 9 header, with mDpbsw81ftI written on the line). I confirmed every quote is correct against its true source; the problem is discoverability, and it is most acute on line 129 because that is precisely the MBTI conflict a reader is asked to audit. -> Append the owning id inline at each spot — （oiULdfvMlYY）after the NFP/NTJ quotes on line 129, （54WCm_VBYfY）after the two responsibility quotes on SKILL.md:81 and evidence.md:52, and （jlO3771JF1E）after the two defence quotes on line 139 — matching the inline-id style used elsewhere in both files.",
+      "Prerequisites #5 mandates 編輯標籤用粗體唔入「」, but several editorial labels remain in corner brackets: line 26 「虧幾多開幾大幾時停」(the sibling lun-risk-management now renders this same phrase in bold), line 101 「佢嘅 10 習慣」, lines 129 and 183 「NFP→NTJ」, and line 187 「退群 vs 教練社群 vs 孤獨」. Together with the two elided quotes these are the only non-corpus 「」spans in the skill, so brackets no longer reliably signal verbatim text. The identical issue was raised and fixed on both lun-prop-firm-playbook and lun-risk-management. -> Convert all five to bold, leaving 「」 for corpus text plus the two literal marker names (「(transcript)」, 「講者轉述研究，未核對原論文」), consistent with the convention now applied across the sibling skills.",
+      "Resources declares 「Contributing videos（27，per profile §6.11）」and lists 27 ids, but the skill actually cites 28 videos. The extra is PypFn7GaVfE, used for the balancing 平衡視角 at SKILL.md:63 and evidence.md:20 (「是不是市場的節奏改變了」). The citation is legitimate — the quote is verbatim in that video and the skill routes it honestly as 'via profile §3.13', which resolves correctly to section 3 item 13 of the profile under this project's numbering convention — but it sits outside the declared contributing set, so the stated count and the actual footprint disagree. For comparison, lun-risk-management's declared 31 matches its cited 31 exactly. -> Either state 「Contributing videos（27＋PypFn7GaVfE 經 profile §3 第 13 項引用嘅平衡視角，非 contributing）」or add PypFn7GaVfE to the list and update the count to 28, so the declared scope matches what the skill actually cites.",
+      "ASR discipline is applied unevenly to the MBTI trader names. references/evidence.md:123 correctly records the ASR forms 「Paul Tudels-Jones」and 「Stanley Drunken Miller」(＝Druckenmiller), but SKILL.md:127 lists only the corrected names (Paul Tudor Jones, Druckenmiller, Simons) with no ASR flag and no entry in the Prerequisites #4 correction table — even though that table meticulously records comparable corrections elsewhere, and Prerequisites #2 explicitly flags the analogous 「Barber & Odin」→Barber & Odean case. Two smaller precision losses ride along: the transcript says 'Jim Simon' (no s), rendered 'Jim Simons' in both files without a marker, and the speaker's qualifier on 巴菲特 — 「巴菲特 INTJ|有時候是ENTJ|但取決他當下需要達到什麼樣的目的」 — is dropped in both files, leaving a flat 'INTJ'. -> Add Paul Tudels-Jones＝Paul Tudor Jones、Stanley Drunken Miller＝Stanley Druckenmiller、Jim Simon＝Jim Simons to the Prerequisites #4 ASR table, and restore the Buffett qualifier as 巴菲特 INTJ（片中補充「有時候是ENTJ」，視乎目的）in Step 8 and evidence.md §8."
+    ],
+    "findings": [
+      {
+        "severity": "medium",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 67,
+        "message": "Two 「」spans present elided text as verbatim, using 「…」 to skip words. SKILL.md:67 renders 「深層的Y…會給你一個穩定」, but ryv0CUgVZCM reads 「旁邊的Y,會給你方向。但是深層的Y,那種最深層的Y,會給你一個穩定。」 — the phrase ',那種最深層的Y,' is silently dropped. references/evidence.md:155 renders 「就算再厲害的交易者也好…他們也會有虧錢的時候」, but H3OZxavXlsk reads 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候。」 — ',再有經驗的交易者也好,' is dropped. Neither elision changes the meaning, but both violate Prerequisites #5 (「」內文字必須照錄筆記/逐字稿原文) and they are the only two spans in either file that contain real corpus text yet fail a verbatim check. A mechanical verifier of the kind this project relies on flags both as missing from the corpus.",
+        "improvement": "Restore the full text in both places, or split each into two separate bracketed spans joined by unquoted connective text — e.g. 「但是深層的Y,那種最深層的Y,會給你一個穩定。」and 「就算再厲害的交易者也好,再有經驗的交易者也好,他們也會有虧錢的時候。」 Then add a line to Prerequisites #5 stating that ellipsis elision inside 「」 is not permitted, so the rule is explicit for future authors.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-trading-psychology/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 129,
+        "message": "Ten quotes across four lines have their owning video id absent from the line while a different id appears later on the same line, making attribution uncheckable in place. SKILL.md:129 gives the (transcript)-labelled 「我是NFP型的」「是非常非常不適合做交易」「我已經是一個NTJ型了」, all from oiULdfvMlYY via the Step 8 header, while the only id written on the line is 0a4NrcfAPJU (correctly attached to the ENFJ quote). SKILL.md:81 and evidence.md:52 do the same with 「你沒有欠市場任何東西,市場也沒有欠你任何東西」and 「當你把專注力放在你可以控制的事情上面的話,你就不會再焦慮了」(54WCm_VBYfY via the Step 4 header, with T2Nk46EqAh4 written on the line). SKILL.md:139 does it with 「很多人赚到钱后就飘了」and 「可能就只是纯粹运气好」(jlO3771JF1E via the Step 9 header, with mDpbsw81ftI written on the line). I confirmed every quote is correct against its true source; the problem is discoverability, and it is most acute on line 129 because that is precisely the MBTI conflict a reader is asked to audit.",
+        "improvement": "Append the owning id inline at each spot — （oiULdfvMlYY）after the NFP/NTJ quotes on line 129, （54WCm_VBYfY）after the two responsibility quotes on SKILL.md:81 and evidence.md:52, and （jlO3771JF1E）after the two defence quotes on line 139 — matching the inline-id style used elsewhere in both files.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 26,
+        "message": "Prerequisites #5 mandates 編輯標籤用粗體唔入「」, but several editorial labels remain in corner brackets: line 26 「虧幾多開幾大幾時停」(the sibling lun-risk-management now renders this same phrase in bold), line 101 「佢嘅 10 習慣」, lines 129 and 183 「NFP→NTJ」, and line 187 「退群 vs 教練社群 vs 孤獨」. Together with the two elided quotes these are the only non-corpus 「」spans in the skill, so brackets no longer reliably signal verbatim text. The identical issue was raised and fixed on both lun-prop-firm-playbook and lun-risk-management.",
+        "improvement": "Convert all five to bold, leaving 「」 for corpus text plus the two literal marker names (「(transcript)」, 「講者轉述研究，未核對原論文」), consistent with the convention now applied across the sibling skills.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 193,
+        "message": "Resources declares 「Contributing videos（27，per profile §6.11）」and lists 27 ids, but the skill actually cites 28 videos. The extra is PypFn7GaVfE, used for the balancing 平衡視角 at SKILL.md:63 and evidence.md:20 (「是不是市場的節奏改變了」). The citation is legitimate — the quote is verbatim in that video and the skill routes it honestly as 'via profile §3.13', which resolves correctly to section 3 item 13 of the profile under this project's numbering convention — but it sits outside the declared contributing set, so the stated count and the actual footprint disagree. For comparison, lun-risk-management's declared 31 matches its cited 31 exactly.",
+        "improvement": "Either state 「Contributing videos（27＋PypFn7GaVfE 經 profile §3 第 13 項引用嘅平衡視角，非 contributing）」or add PypFn7GaVfE to the list and update the count to 28, so the declared scope matches what the skill actually cites.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-trading-psychology/SKILL.md",
+        "line": 127,
+        "message": "ASR discipline is applied unevenly to the MBTI trader names. references/evidence.md:123 correctly records the ASR forms 「Paul Tudels-Jones」and 「Stanley Drunken Miller」(＝Druckenmiller), but SKILL.md:127 lists only the corrected names (Paul Tudor Jones, Druckenmiller, Simons) with no ASR flag and no entry in the Prerequisites #4 correction table — even though that table meticulously records comparable corrections elsewhere, and Prerequisites #2 explicitly flags the analogous 「Barber & Odin」→Barber & Odean case. Two smaller precision losses ride along: the transcript says 'Jim Simon' (no s), rendered 'Jim Simons' in both files without a marker, and the speaker's qualifier on 巴菲特 — 「巴菲特 INTJ|有時候是ENTJ|但取決他當下需要達到什麼樣的目的」 — is dropped in both files, leaving a flat 'INTJ'.",
+        "improvement": "Add Paul Tudels-Jones＝Paul Tudor Jones、Stanley Drunken Miller＝Stanley Druckenmiller、Jim Simon＝Jim Simons to the Prerequisites #4 ASR table, and restore the Buffett qualifier as 巴菲特 INTJ（片中補充「有時候是ENTJ」，視乎目的）in Step 8 and evidence.md §8.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}
