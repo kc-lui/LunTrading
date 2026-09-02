@@ -64,3 +64,4 @@
 - lun-risk-management: 本片核心——倉位計算公式（資金×風險％÷止損點數）、三種止損擺法、兩種止盈法、80% 提早出場規則、盈虧比與勝率嘅取捨
 - lun-price-action-toolkit: 止損止盈參照物全部係 price action 元素——Swing Structure 前高前低、Technical Barrier、趨勢線、Triple Test、HTF 主力支撐阻力區、入場 K 線形態
 - lun-trading-psychology: 「寧可殺錯,也不要錯過」FOMO 批判、提早收割免情緒化衝動、接受連虧同低勝率嘅心理準備
+- lun-exit-management: 本片係全 corpus 最集中講出場嘅影片——兩種止盈方法（固定盈虧比／HTF 主力區）、80% 到止盈提早出場規則、K線收盤（candle close）反轉即出場、RR↔勝率 tradeoff（cluster 由 Q371XdV3apE 提議，此處沿用以保持 tagging 一致）
