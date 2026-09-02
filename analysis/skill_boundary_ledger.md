@@ -33,3 +33,14 @@
 - **覆蓋**：訂單博弈機制層 — 三種訂單類型、止損單＝突破單燃料、流動性池地圖（高低壓、internal/external）、三種流動性形態 vs 三種池行為（平行框架，唔好合併）、獵殺/sweep 循環、真假突破嘅「站得住」機制測試、先佈局 vs 等確認雙口徑、Daily Bias 應用鏈、進階工具（Heatmap 盲點等，單源）。
 - **唔覆蓋**：PD Array 詞彙（→ lun-ict-pd-arrays）、破位策略執行/K線收盤紀律（→ lun-price-action-toolkit）、時段（→ lun-kill-zones-timing）、MTF 分工（→ lun-multi-timeframe-analysis）、入場執行（→ lun-ote-entry-model）、出場（→ lun-exit-management）。
 - **DRY anchor**：流動性池位置、掃蕩機制、真假突破機制測試由本 skill 持有；「掃描流動性」相關一律指向本 skill。
+
+### 4. lun-kill-zones-timing ✅ 90/100（2026-09-02，auto 80 / LLM 96，first pass）
+- **覆蓋**：「幾時交易」決策層 — Kill Zone 時間表（亞洲/倫敦/紐約，含 NY 雙口徑平行呈現）、時段揀選與品種配對、時段紀律清單、個人 routine、Weekly Market Profile 子節（單源）、數據日曆/新聞 timing 子節（單源）、時區口徑規則（紐約時間 vs 美國時間 vs 馬來西亞時間）。
+- **唔覆蓋**：倫敦破位策略執行（→ lun-price-action-toolkit）、時段內流動性行為（→ lun-liquidity-analysis）、入場模型（→ lun-ote-entry-model）、MTF 分工（→ lun-multi-timeframe-analysis）。ICT 銀彈策略＝僅預告未教，唔准由教科書補完。
+- **DRY anchor**：一切時間表/時段/日曆判斷指向本 skill。
+
+### 5. lun-multi-timeframe-analysis ✅ 90/100（2026-09-02，auto 80 / LLM 96，first pass）
+- **覆蓋**：時框分工路由層 — 7-row 時框組合對照表（主流 D1→4H/1H→5m、圖形 15m/5m、四層版、五時框版等，平行照錄唔合併）、一票否決順序（B7rumsOw6_U）、動能回流公開骨架（大時框止盈＋小時框入場；完整 1234 招明示留付費班，禁止補完）、A+ 交易四大標準過濾器（k0ESC6XYz50，單源）、鬧鐘/切換 routine。
+- **唔覆蓋**：各時框內用乜工具判斷（→ 對應 sibling）、時段（→ lun-kill-zones-timing）、入場觸發（→ lun-ote-entry-model）、圖形庫（→ lun-price-action-toolkit）。
+- **DRY anchor**：HTF→LTF 分工、時框組合揀選、動能回流骨架、A+ 過濾清單由本 skill 持有。
+
