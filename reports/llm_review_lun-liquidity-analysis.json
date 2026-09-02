@@ -1,0 +1,20 @@
+{
+  "score": 96,
+  "summary": "Excellent corpus-grounded knowledge-only skill that arrives clean on first pass, incorporating the conventions established in the two previously reviewed siblings (self-locating path anchor, per-quote transcript provenance labels). Quote integrity: 27 verifications, all passed — 18+ note-level quotes verified verbatim across 13 videos (liquidity-as-order-battle, stop-loss-as-fuel, STOP HUNTING, big-timeframe filter, overlapping-pool priority, pool-behavior triad, no-sweep-no-trade, Daily Bias chain, 1:2/1:3 RR context quotes, both worked examples), and all 12 '(transcript)'-labeled yZoSW3DGRGI recoveries were found verbatim in data/transcripts/yZoSW3DGRGI.txt — three times the required sample — with negative checks confirming those quotes are genuinely absent from the note, so the transcript-recovery labeling is honest, not decorative. Anti-injection is clean with one caveat: 'draw on liquidity', SMT, and inducement theory are properly fenced out and every BSL/SSL/internal-external/Engineered-Liquidity definition traces to a quoted source, but the frontmatter description advertises 'equal highs-lows（重疊流動性）' as a trigger term even though 'equal highs' appears nowhere in the corpus notes and Prerequisite 1 itself names it as an example of forbidden non-corpus vocabulary. Contradiction handling meets the bar: the two triple-frameworks (yZoSW3DGRGI 三種流動性形態 vs xwsyfVf2l0k 池上三行為) are presented as parallel facets in a two-row table with an explicit do-not-merge instruction, 先佈局 vs 等確認 are parallel options with the no-judgment default stated, and RR 1:2/1:3 is context-layered per profile 7.3.2. DRY is clean (PD Array to lun-ict-pd-arrays, breakout execution to lun-price-action-toolkit, sessions/exit/MTF all deferred), and 單源低信心 flags are consistent across the vocabulary table, workflow steps, and limitation 3. Content risk is low.",
+  "findings": [
+    {
+      "severity": "low",
+      "path": "skills/lun-liquidity-analysis/SKILL.md",
+      "line": 3,
+      "message": "The frontmatter description lists 'equal highs-lows（重疊流動性）' as a trigger phrase, but grep confirms 'equal highs' appears nowhere in analysis/video_notes/ — and Prerequisite 1 (line 31) explicitly names 'equal highs 專門術語' as an example of non-corpus ICT vocabulary that must not be injected. Using it as a discoverability alias is defensible, but the unannotated mapping to 重疊流動性 reads as licensing the term and contradicts the skill's own grounding rule.",
+      "improvement": "Either drop 'equal highs-lows' from the description, or keep it as an explicit alias with a caveat mirroring Prerequisite 1, e.g. 'equal highs（非講者用語，corpus 內最近義概念＝重疊流動性）', so trigger coverage is preserved without implying the speaker taught the term."
+    },
+    {
+      "severity": "low",
+      "path": "skills/lun-liquidity-analysis/references/evidence.md",
+      "line": 82,
+      "message": "In section 7, the JtPN1rBq5h0 站得住 quote and the yZoSW3DGRGI transcript 站得住 quote describe the same mechanism with opposite candle-color framing (JtPN: strong counter-move that 壓不了太多; yZoSW3DGRGI: 熊市K線並沒有很長 after an upside break). Both are verbatim and compatible, but the file presents them adjacently without noting they are the same test seen from breakout-direction-agnostic vs long-break perspectives, which could confuse an operator applying it to a downside break.",
+      "improvement": "Add a one-line bridging note after line 82 stating both quotes express one direction-symmetric test (counter-directional momentum fails to reclaim much ground), so the 熊市/牛市 wording is read as example-specific rather than rule-specific."
+    }
+  ]
+}
