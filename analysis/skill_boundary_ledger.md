@@ -54,3 +54,8 @@
 - **唔覆蓋**：倉位 sizing/風險%（→ lun-risk-management）、時段性出場時間表（→ lun-kill-zones-timing）、入場序列中嘅 SL/TP 初設（→ lun-ote-entry-model）。
 - **DRY anchor**：一切「止損放邊/止盈點邊度/幾時提前走」由本 skill 持有。
 
+### 8. lun-backtesting-method ✅ 90/100（2026-09-02，auto 80 / LLM 96，first pass）
+- **覆蓋**：手動 TradingView-replay 式回測方法 — 樣本量分層（10/50–100/100–200，按用途，唔合併）、截圖＋解釋記錄法、bar-by-bar 唔睇後市、系統信心數據（expected return/預期連敗/連勝/平均 RRR）、日記與覆盤節奏、多系統框架與 100 筆挑戰（單源；挑戰本體係付費班功課，只錄公開部分）。教科書方法論（walk-forward/Monte Carlo/overfitting）明令禁止補完；NqixhiGBt9E 出 corpus 外，唔准引用。
+- **唔覆蓋**：五大系統具體規則（→ lun-price-action-toolkit / lun-liquidity-analysis）、風險%（→ lun-risk-management）、考試應用（→ lun-prop-firm-playbook）、出場（→ lun-exit-management）。
+- **DRY anchor**：「點樣驗證一個系統」由本 skill 持有。
+
