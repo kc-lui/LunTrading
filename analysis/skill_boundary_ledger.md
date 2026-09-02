@@ -59,3 +59,8 @@
 - **唔覆蓋**：五大系統具體規則（→ lun-price-action-toolkit / lun-liquidity-analysis）、風險%（→ lun-risk-management）、考試應用（→ lun-prop-firm-playbook）、出場（→ lun-exit-management）。
 - **DRY anchor**：「點樣驗證一個系統」由本 skill 持有。
 
+### 9. lun-prop-firm-playbook ✅ 90/100（2026-09-02，auto 80 / LLM 96，round 2）
+- **覆蓋**：資金盤/機構考試層 — 資金問題診斷（識交易但本金細）、數據門檻（先有回測數據先好考）、兩條路線對照（FTMO 倒推計劃 vs Axi Select【推廣合作】隔離區）、考試用短線系統背景、prop firm 風險上限（考試 1%、撥資 ≤1%、起步 0.25%、絕不過夜——情緒理由為原話，考試保護框架屬推測）、增長藍圖（講者藍圖非驗證統計）、出金後戒飄。Axi 規則帶時效性 caveat；MjPZizFnX-E 引用必帶分母 caveat。
+- **唔覆蓋**：一般風險%（→ lun-risk-management）、考試系統規則本體（→ lun-price-action-toolkit）、TP/SL 放置（→ lun-exit-management）、時段（→ lun-kill-zones-timing）。
+- **DRY anchor**：考試規則、資金盤路線比較、贊助內容隔離規範由本 skill 持有。
+

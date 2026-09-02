@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-09-02 19:27:27",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-prop-firm-playbook",
+  "skill_file": "skills/lun-prop-firm-playbook/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-prop-firm-playbook",
+    "skill_file": "skills/lun-prop-firm-playbook/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-prop-firm-playbook.json",
+    "score": 96,
+    "summary": "Re-review of the revised skill. All eight prior findings are fixed, and I verified the two substantive ones mechanically rather than taking them on report. The HIGH sponsored-CTA misattribution is genuinely resolved: 「記得點擊影片下面的連結,註冊一個帳戶。」and 「用我的連結,你們會得到最好的交易條件,我的客戶經理呢,也可以隨時協助你的所有問題。」are both present in data/transcripts/91Hpt_LyJSE.txt and absent from nzZ5oqmLjhM.txt, while 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」and 「點擊下面的連結開戶,」are present in nzZ5oqmLjhM.txt and absent from 91Hpt_LyJSE.txt — each sponsored video now carries its own two CTA lines, and the added 客戶經理 affiliate line is stronger quarantine evidence than what was there before. The H-score gating is corrected to 50→總值 / 60→孵化 / 70→加速 in both files and, better than asked, evidence.md:87 now backs each rung with a verbatim (transcript) citation, all three confirmed in nzZ5oqmLjhM.txt and correctly attributed (with 90分 correctly left on 91Hpt_LyJSE). I re-extracted all 「」spans from both files: every one resolves verbatim against analysis/video_notes/ or data/transcripts/, and a per-line attribution check found no quote assigned to a video that does not contain it. The remaining six fixes all landed — 雙軌並行 is now a marked 推測 carrying 【推廣合作】 with the ASR damage stated and the 旁證 separated as 非同句, mirrored in the 對照表; the date range reads 2024-09 至 2026-02, matching the notes' 日期 fields; the MTF pointer is de-quoted; editorial labels are bold so corner brackets are corpus-only; the overnight rationale quotes the emotional reason and marks the exam framing 推測; the §4.2 TP/SL bullet points to lun-exit-management; and skill-relative ../../../ path forms are documented. Two low residuals remain, both cosmetic and neither affecting a user-facing rule.",
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/references/evidence.md",
+        "line": 65,
+        "message": "The overnight fix landed asymmetrically. SKILL.md:79 now quotes the emotional reason verbatim (「然後覺得很壓力。然後沮喪。開始情緒化交易。」) and marks the exam-account framing as （推測）, but the evidence.md bullet is still labelled 絕不過夜（考試帳戶保護習慣） with no 推測 marker — the same unmarked inference the SKILL.md edit removed. A reader consulting the evidence file alone still sees the interpretation presented as source fact.",
+        "improvement": "Relabel the bullet 絕不過夜（片中理由：情緒壓力；（推測）考試帳戶保護作用） so the reference file matches the marker discipline now applied in SKILL.md:79."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 87,
+        "message": "Three SKILL.md lines carry a quote whose source video id is not on that line while a different video id is, which is the residue of the pattern that produced the original misattribution. Line 87: 「它沒有限定每日虧程是多少」is nzZ5oqmLjhM's but the only id on the line is 91Hpt_LyJSE, attached to the preceding quote. Line 72: the FTMO 兩階段 (transcript) quote is xmHaONnNrCw's, inferable only from the Step 4 header, while rE21_onS0uo appears later in the same line. Line 149: 「幾乎每兩個星期我都可以出境五位數美金」is 7j7_mhfda38's, while the only id on the line is MjPZizFnX-E. All three are attributed correctly in references/evidence.md and none crosses the sponsored/non-sponsored or lived/second-hand boundary, so no quarantine is breached — but the ids are not locally checkable.",
+        "improvement": "Append the owning video id inline at each of the three spots: （nzZ5oqmLjhM）after 「它沒有限定每日虧程是多少」on line 87, （xmHaONnNrCw）after the 兩階段 quote on line 72, and （7j7_mhfda38）after the 出境五位數 quote on line 149, so every quote in SKILL.md is verifiable from its own line."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 90,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": false,
+    "improvement_items": [],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/references/evidence.md",
+        "line": 65,
+        "message": "The overnight fix landed asymmetrically. SKILL.md:79 now quotes the emotional reason verbatim (「然後覺得很壓力。然後沮喪。開始情緒化交易。」) and marks the exam-account framing as （推測）, but the evidence.md bullet is still labelled 絕不過夜（考試帳戶保護習慣） with no 推測 marker — the same unmarked inference the SKILL.md edit removed. A reader consulting the evidence file alone still sees the interpretation presented as source fact.",
+        "improvement": "Relabel the bullet 絕不過夜（片中理由：情緒壓力；（推測）考試帳戶保護作用） so the reference file matches the marker discipline now applied in SKILL.md:79.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 87,
+        "message": "Three SKILL.md lines carry a quote whose source video id is not on that line while a different video id is, which is the residue of the pattern that produced the original misattribution. Line 87: 「它沒有限定每日虧程是多少」is nzZ5oqmLjhM's but the only id on the line is 91Hpt_LyJSE, attached to the preceding quote. Line 72: the FTMO 兩階段 (transcript) quote is xmHaONnNrCw's, inferable only from the Step 4 header, while rE21_onS0uo appears later in the same line. Line 149: 「幾乎每兩個星期我都可以出境五位數美金」is 7j7_mhfda38's, while the only id on the line is MjPZizFnX-E. All three are attributed correctly in references/evidence.md and none crosses the sponsored/non-sponsored or lived/second-hand boundary, so no quarantine is breached — but the ids are not locally checkable.",
+        "improvement": "Append the owning video id inline at each of the three spots: （nzZ5oqmLjhM）after 「它沒有限定每日虧程是多少」on line 87, （xmHaONnNrCw）after the 兩階段 quote on line 72, and （7j7_mhfda38）after the 出境五位數 quote on line 149, so every quote in SKILL.md is verifiable from its own line.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}

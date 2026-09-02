@@ -1,0 +1,210 @@
+{
+  "generated_at": "2026-09-02 19:21:18",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-prop-firm-playbook",
+  "skill_file": "skills/lun-prop-firm-playbook/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-prop-firm-playbook",
+    "skill_file": "skills/lun-prop-firm-playbook/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-prop-firm-playbook.json",
+    "score": 88,
+    "summary": "Structurally this is the strongest knowledge-only skill in the set so far: an 8-step route (資金診斷 → 數據門檻 → 揀路線 → 倒推計劃 → 考試系統 → Axi 晉級 → 增長藍圖 → 出金後), a dedicated SPONSORED-CONTENT hard rule, 時效性 as-stated dating on every program rule, aspirational-blueprint tagging, the MjPZizFnX-E denominator caveat, and clean DRY hand-offs matching analysis/skill_boundary_ledger.md. I mechanically extracted all 150+ 「」spans from SKILL.md and references/evidence.md and matched them (whitespace-normalized) against analysis/video_notes/*.md and data/transcripts/*.txt: every substantive quote exists verbatim, ASR noise characters (�, ＼, Ｖ) preserved, and all ten contributing-video as-stated dates match the notes' 日期 fields exactly. No textbook/generic prop-firm theory is injected; off-corpus topics (other prop firms, tax, legal history) sit inside an explicit ban fence. However, the skill's own #1 hard rule is evidenced by a misattributed quote: both CTA lines cited as sponsorship proof — 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」and 「點擊下面的連結開戶,」— occur only in data/transcripts/nzZ5oqmLjhM.txt; 91Hpt_LyJSE.txt contains neither (its real CTA is 「記得點擊影片下面的連結,註冊一個帳戶。」plus an even stronger affiliate line 「用我的連結,你們會得到最好的交易條件,我的客戶經理呢,也可以隨時協助你的所有問題。」). Separately, the H-score tier gating in SKILL.md compresses nzZ5oqmLjhM's rule incorrectly (60 分 gates 孵化階段, not 總值), contradicting both the transcript and the skill's own evidence.md. Both are small edits, but under the project's verbatim-attribution kill criterion they must be fixed before this passes.",
+    "findings": [
+      {
+        "severity": "high",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 33,
+        "message": "SPONSORED-CONTENT hard rule (Prerequisites #2) cites 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」as (transcript) evidence from 91Hpt_LyJSE. That string does not exist in data/transcripts/91Hpt_LyJSE.txt — it appears only in data/transcripts/nzZ5oqmLjhM.txt, which is also the source of the second cited line 「點擊下面的連結開戶,」. Both 'two CTA lines from two videos' are in fact one video's text; 91Hpt_LyJSE never contains the substring 點擊下面的連結 (it says 點擊影片下面的連結). The video IS sponsored, so the classification survives, but the load-bearing evidence for quarantining 91Hpt_LyJSE is a misattributed quote — the exact failure mode the project's verbatim convention exists to catch.",
+        "improvement": "Replace the 91Hpt_LyJSE CTA citation with a verbatim line that actually exists in that transcript, e.g. (transcript)「記得點擊影片下面的連結,註冊一個帳戶。」and preferably add the stronger affiliate marker (transcript)「用我的連結,你們會得到最好的交易條件,我的客戶經理呢,也可以隨時協助你的所有問題。」; keep 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」and 「點擊下面的連結開戶,」both attributed to nzZ5oqmLjhM. Apply the same correction to references/evidence.md line 5, which repeats the identical misattribution."
+      },
+      {
+        "severity": "medium",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 89,
+        "message": "H 分數 tier gating is stated as 「nzZ5oqmLjhM 分階段口徑：50 分開戶啟動、60 分晉級總值、70 分入加速」. The transcript says 50 分 opens 總值階段 (「達到了這個50分的H分數之後,你就可以開啟這個總值階段了」) and 60 分 promotes to 孵化階段 (「加上你有最少60分的H分數的話,你就可以進擊到孵化階段」). So '60 分晉級總值' both contradicts the source and self-contradicts the preceding clause in the same line (50 分 already opened 總值). references/evidence.md:87 is vaguer and does not carry the error, so SKILL.md is inconsistent with its own evidence file on a sponsored program's advancement rule a reader could act on.",
+        "improvement": "Rewrite as 「50 分開啟總值階段、60 分晉級孵化階段、70 分入加速階段（nzZ5oqmLjhM【推廣合作】）」and make references/evidence.md §6.2 name the destination stage for each threshold so the two files state the same mapping."
+      },
+      {
+        "severity": "medium",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 68,
+        "message": "Step 3 concludes 「雙軌並行係佢嘅實際口徑」 from 91Hpt_LyJSE's ASR-garbled clause 「同時AXIS Select也不要放過,我們都錯」, whose meaning the skill itself flags as uncertain (ASR 疑＝兩個都做). Two problems: (a) the conclusion is asserted as 實際口徑 without a 推測 marker despite resting on an admittedly unreliable segment; (b) unlike every other 91Hpt citation in SKILL.md, this one carries no 【推廣合作】 tag even though it sits outside the Step 6 banner — and 'do both' is precisely the recommendation that routes a user into the sponsor's product.",
+        "improvement": "Tag the citation 【推廣合作】 like its neighbours at line 67, and downgrade the claim to a marked inference, e.g. 「（推測）如果 ASR 原意係『兩個都做』，即佢喺贊助語境下主張雙軌並行；原句 ASR 損壞，唔可以當確定口徑」. Mirror the softening in the 兩條路線對照表 row 117."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 147,
+        "message": "侷限聲明 #2 dates the corpus as 「（2024-09 至 2025-12）」, but the contributing set runs to 2026-02-10 (48pCaOfGGmA) and 2026-01-25 (HeQiNekCZng) — as correctly listed in references/evidence.md line 7 and confirmed against the 日期 fields in analysis/video_notes/. The SKILL.md range understates recency and contradicts the reference file.",
+        "improvement": "Change to 「（2024-09 至 2026-02）」so it matches the evidence.md date roster."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 28,
+        "message": "The When-to-Use pointer renders the MTF consensus line as 「日線圖4小時1小時都是指著同一個方向」, stripping the ASR separators and the trailing 的. The corpus form, used correctly at lines 75 and evidence.md:54, is 「就是在日線圖4小時�1小時都是指著同一個方向的」. It is the one 「」span in either file that does not match any note or transcript verbatim, which violates the skill's own Prerequisites #1 (引用「」內文字必須照錄).",
+        "improvement": "Either quote it verbatim with the � separators, or drop the corner brackets and describe it as 多時框共識 without quotation marks, since this line is only a routing pointer to lun-multi-timeframe-analysis."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 8,
+        "message": "Corner brackets 「」are used both for verbatim corpus quotes and for the skill's own editorial labels — 「識交易但本金太細」(L8), 「有咗數據先好考」(L26), 「講者藍圖非驗證統計」(L128, L150). A reader (or a downstream verbatim checker) cannot tell the two apart from the delimiter alone; my extraction flagged exactly these as the non-corpus spans.",
+        "improvement": "Reserve 「」for corpus text and switch editorial labels to bold or plain quotes, e.g. **講者藍圖非驗證統計** — matching the convention already used for 【推廣合作】 tags."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 79,
+        "message": "「我們不要hold overnight」is reframed as 「日內絕不過夜係考試帳戶保護習慣，本 skill 持有」. In 7j7_mhfda38 the stated reason is emotional (持倉過夜會「然後覺得很壓力。然後沮喪。開始情緒化交易。」), not exam-account drawdown protection. The prop-firm rationale is the skill's inference and is not marked 推測, unlike comparable inferences elsewhere in the file.",
+        "improvement": "Add a 推測 marker or restate as 「（推測）呢個習慣喺考試帳戶場景下同時起到保護作用；片中講嘅理由係情緒壓力（7j7_mhfda38）」."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/references/evidence.md",
+        "line": 55,
+        "message": "The §4.2 bullet carrying 「我的止盈點�是跟著日線圖或者是周期圖的」「紫损�很窄�我的止盈很寬」records take-profit/stop placement, which analysis/skill_boundary_ledger.md §7 assigns to lun-exit-management ('一切止損放邊/止盈點邊度/幾時提前走由本 skill 持有'). Neighbouring bullets carry pointers (→ lun-multi-timeframe-analysis, → lun-backtesting-method) but this one does not, so the reference file quietly holds sibling-owned content.",
+        "improvement": "Append 「（止盈/止損放置規則本體 → lun-exit-management，本節只作考試打法背景）」to that bullet, consistent with the pointer style used on lines 54 and 57."
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 157,
+        "message": "Confirms the auto-axis finding: evidence paths (analysis/lun_trading_profile.md, data/transcripts/<video_id>.txt) are project-root-relative and do not resolve from the skill directory. The 路徑註記 at line 160 mitigates this honestly by explaining the two-levels-up relationship and stating that only references/evidence.md is guaranteed skill-local.",
+        "improvement": "Optionally add the skill-relative form once (../../../analysis/lun_trading_profile.md) alongside the project-root path so both a human and a tool can resolve it; the existing note is otherwise an acceptable mitigation."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 85,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": true,
+    "improvement_items": [
+      "SPONSORED-CONTENT hard rule (Prerequisites #2) cites 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」as (transcript) evidence from 91Hpt_LyJSE. That string does not exist in data/transcripts/91Hpt_LyJSE.txt — it appears only in data/transcripts/nzZ5oqmLjhM.txt, which is also the source of the second cited line 「點擊下面的連結開戶,」. Both 'two CTA lines from two videos' are in fact one video's text; 91Hpt_LyJSE never contains the substring 點擊下面的連結 (it says 點擊影片下面的連結). The video IS sponsored, so the classification survives, but the load-bearing evidence for quarantining 91Hpt_LyJSE is a misattributed quote — the exact failure mode the project's verbatim convention exists to catch. -> Replace the 91Hpt_LyJSE CTA citation with a verbatim line that actually exists in that transcript, e.g. (transcript)「記得點擊影片下面的連結,註冊一個帳戶。」and preferably add the stronger affiliate marker (transcript)「用我的連結,你們會得到最好的交易條件,我的客戶經理呢,也可以隨時協助你的所有問題。」; keep 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」and 「點擊下面的連結開戶,」both attributed to nzZ5oqmLjhM. Apply the same correction to references/evidence.md line 5, which repeats the identical misattribution.",
+      "H 分數 tier gating is stated as 「nzZ5oqmLjhM 分階段口徑：50 分開戶啟動、60 分晉級總值、70 分入加速」. The transcript says 50 分 opens 總值階段 (「達到了這個50分的H分數之後,你就可以開啟這個總值階段了」) and 60 分 promotes to 孵化階段 (「加上你有最少60分的H分數的話,你就可以進擊到孵化階段」). So '60 分晉級總值' both contradicts the source and self-contradicts the preceding clause in the same line (50 分 already opened 總值). references/evidence.md:87 is vaguer and does not carry the error, so SKILL.md is inconsistent with its own evidence file on a sponsored program's advancement rule a reader could act on. -> Rewrite as 「50 分開啟總值階段、60 分晉級孵化階段、70 分入加速階段（nzZ5oqmLjhM【推廣合作】）」and make references/evidence.md §6.2 name the destination stage for each threshold so the two files state the same mapping.",
+      "Step 3 concludes 「雙軌並行係佢嘅實際口徑」 from 91Hpt_LyJSE's ASR-garbled clause 「同時AXIS Select也不要放過,我們都錯」, whose meaning the skill itself flags as uncertain (ASR 疑＝兩個都做). Two problems: (a) the conclusion is asserted as 實際口徑 without a 推測 marker despite resting on an admittedly unreliable segment; (b) unlike every other 91Hpt citation in SKILL.md, this one carries no 【推廣合作】 tag even though it sits outside the Step 6 banner — and 'do both' is precisely the recommendation that routes a user into the sponsor's product. -> Tag the citation 【推廣合作】 like its neighbours at line 67, and downgrade the claim to a marked inference, e.g. 「（推測）如果 ASR 原意係『兩個都做』，即佢喺贊助語境下主張雙軌並行；原句 ASR 損壞，唔可以當確定口徑」. Mirror the softening in the 兩條路線對照表 row 117.",
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context.",
+      "侷限聲明 #2 dates the corpus as 「（2024-09 至 2025-12）」, but the contributing set runs to 2026-02-10 (48pCaOfGGmA) and 2026-01-25 (HeQiNekCZng) — as correctly listed in references/evidence.md line 7 and confirmed against the 日期 fields in analysis/video_notes/. The SKILL.md range understates recency and contradicts the reference file. -> Change to 「（2024-09 至 2026-02）」so it matches the evidence.md date roster.",
+      "The When-to-Use pointer renders the MTF consensus line as 「日線圖4小時1小時都是指著同一個方向」, stripping the ASR separators and the trailing 的. The corpus form, used correctly at lines 75 and evidence.md:54, is 「就是在日線圖4小時�1小時都是指著同一個方向的」. It is the one 「」span in either file that does not match any note or transcript verbatim, which violates the skill's own Prerequisites #1 (引用「」內文字必須照錄). -> Either quote it verbatim with the � separators, or drop the corner brackets and describe it as 多時框共識 without quotation marks, since this line is only a routing pointer to lun-multi-timeframe-analysis.",
+      "Corner brackets 「」are used both for verbatim corpus quotes and for the skill's own editorial labels — 「識交易但本金太細」(L8), 「有咗數據先好考」(L26), 「講者藍圖非驗證統計」(L128, L150). A reader (or a downstream verbatim checker) cannot tell the two apart from the delimiter alone; my extraction flagged exactly these as the non-corpus spans. -> Reserve 「」for corpus text and switch editorial labels to bold or plain quotes, e.g. **講者藍圖非驗證統計** — matching the convention already used for 【推廣合作】 tags.",
+      "「我們不要hold overnight」is reframed as 「日內絕不過夜係考試帳戶保護習慣，本 skill 持有」. In 7j7_mhfda38 the stated reason is emotional (持倉過夜會「然後覺得很壓力。然後沮喪。開始情緒化交易。」), not exam-account drawdown protection. The prop-firm rationale is the skill's inference and is not marked 推測, unlike comparable inferences elsewhere in the file. -> Add a 推測 marker or restate as 「（推測）呢個習慣喺考試帳戶場景下同時起到保護作用；片中講嘅理由係情緒壓力（7j7_mhfda38）」.",
+      "The §4.2 bullet carrying 「我的止盈點�是跟著日線圖或者是周期圖的」「紫损�很窄�我的止盈很寬」records take-profit/stop placement, which analysis/skill_boundary_ledger.md §7 assigns to lun-exit-management ('一切止損放邊/止盈點邊度/幾時提前走由本 skill 持有'). Neighbouring bullets carry pointers (→ lun-multi-timeframe-analysis, → lun-backtesting-method) but this one does not, so the reference file quietly holds sibling-owned content. -> Append 「（止盈/止損放置規則本體 → lun-exit-management，本節只作考試打法背景）」to that bullet, consistent with the pointer style used on lines 54 and 57.",
+      "Confirms the auto-axis finding: evidence paths (analysis/lun_trading_profile.md, data/transcripts/<video_id>.txt) are project-root-relative and do not resolve from the skill directory. The 路徑註記 at line 160 mitigates this honestly by explaining the two-levels-up relationship and stating that only references/evidence.md is guaranteed skill-local. -> Optionally add the skill-relative form once (../../../analysis/lun_trading_profile.md) alongside the project-root path so both a human and a tool can resolve it; the existing note is otherwise an acceptable mitigation."
+    ],
+    "findings": [
+      {
+        "severity": "high",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 33,
+        "message": "SPONSORED-CONTENT hard rule (Prerequisites #2) cites 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」as (transcript) evidence from 91Hpt_LyJSE. That string does not exist in data/transcripts/91Hpt_LyJSE.txt — it appears only in data/transcripts/nzZ5oqmLjhM.txt, which is also the source of the second cited line 「點擊下面的連結開戶,」. Both 'two CTA lines from two videos' are in fact one video's text; 91Hpt_LyJSE never contains the substring 點擊下面的連結 (it says 點擊影片下面的連結). The video IS sponsored, so the classification survives, but the load-bearing evidence for quarantining 91Hpt_LyJSE is a misattributed quote — the exact failure mode the project's verbatim convention exists to catch.",
+        "improvement": "Replace the 91Hpt_LyJSE CTA citation with a verbatim line that actually exists in that transcript, e.g. (transcript)「記得點擊影片下面的連結,註冊一個帳戶。」and preferably add the stronger affiliate marker (transcript)「用我的連結,你們會得到最好的交易條件,我的客戶經理呢,也可以隨時協助你的所有問題。」; keep 「點擊下面的連結開一個戶,註冊一個AXE賬戶,」and 「點擊下面的連結開戶,」both attributed to nzZ5oqmLjhM. Apply the same correction to references/evidence.md line 5, which repeats the identical misattribution.",
+        "axis": "llm"
+      },
+      {
+        "severity": "medium",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 89,
+        "message": "H 分數 tier gating is stated as 「nzZ5oqmLjhM 分階段口徑：50 分開戶啟動、60 分晉級總值、70 分入加速」. The transcript says 50 分 opens 總值階段 (「達到了這個50分的H分數之後,你就可以開啟這個總值階段了」) and 60 分 promotes to 孵化階段 (「加上你有最少60分的H分數的話,你就可以進擊到孵化階段」). So '60 分晉級總值' both contradicts the source and self-contradicts the preceding clause in the same line (50 分 already opened 總值). references/evidence.md:87 is vaguer and does not carry the error, so SKILL.md is inconsistent with its own evidence file on a sponsored program's advancement rule a reader could act on.",
+        "improvement": "Rewrite as 「50 分開啟總值階段、60 分晉級孵化階段、70 分入加速階段（nzZ5oqmLjhM【推廣合作】）」and make references/evidence.md §6.2 name the destination stage for each threshold so the two files state the same mapping.",
+        "axis": "llm"
+      },
+      {
+        "severity": "medium",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 68,
+        "message": "Step 3 concludes 「雙軌並行係佢嘅實際口徑」 from 91Hpt_LyJSE's ASR-garbled clause 「同時AXIS Select也不要放過,我們都錯」, whose meaning the skill itself flags as uncertain (ASR 疑＝兩個都做). Two problems: (a) the conclusion is asserted as 實際口徑 without a 推測 marker despite resting on an admittedly unreliable segment; (b) unlike every other 91Hpt citation in SKILL.md, this one carries no 【推廣合作】 tag even though it sits outside the Step 6 banner — and 'do both' is precisely the recommendation that routes a user into the sponsor's product.",
+        "improvement": "Tag the citation 【推廣合作】 like its neighbours at line 67, and downgrade the claim to a marked inference, e.g. 「（推測）如果 ASR 原意係『兩個都做』，即佢喺贊助語境下主張雙軌並行；原句 ASR 損壞，唔可以當確定口徑」. Mirror the softening in the 兩條路線對照表 row 117.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-prop-firm-playbook/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 147,
+        "message": "侷限聲明 #2 dates the corpus as 「（2024-09 至 2025-12）」, but the contributing set runs to 2026-02-10 (48pCaOfGGmA) and 2026-01-25 (HeQiNekCZng) — as correctly listed in references/evidence.md line 7 and confirmed against the 日期 fields in analysis/video_notes/. The SKILL.md range understates recency and contradicts the reference file.",
+        "improvement": "Change to 「（2024-09 至 2026-02）」so it matches the evidence.md date roster.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 28,
+        "message": "The When-to-Use pointer renders the MTF consensus line as 「日線圖4小時1小時都是指著同一個方向」, stripping the ASR separators and the trailing 的. The corpus form, used correctly at lines 75 and evidence.md:54, is 「就是在日線圖4小時�1小時都是指著同一個方向的」. It is the one 「」span in either file that does not match any note or transcript verbatim, which violates the skill's own Prerequisites #1 (引用「」內文字必須照錄).",
+        "improvement": "Either quote it verbatim with the � separators, or drop the corner brackets and describe it as 多時框共識 without quotation marks, since this line is only a routing pointer to lun-multi-timeframe-analysis.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 8,
+        "message": "Corner brackets 「」are used both for verbatim corpus quotes and for the skill's own editorial labels — 「識交易但本金太細」(L8), 「有咗數據先好考」(L26), 「講者藍圖非驗證統計」(L128, L150). A reader (or a downstream verbatim checker) cannot tell the two apart from the delimiter alone; my extraction flagged exactly these as the non-corpus spans.",
+        "improvement": "Reserve 「」for corpus text and switch editorial labels to bold or plain quotes, e.g. **講者藍圖非驗證統計** — matching the convention already used for 【推廣合作】 tags.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 79,
+        "message": "「我們不要hold overnight」is reframed as 「日內絕不過夜係考試帳戶保護習慣，本 skill 持有」. In 7j7_mhfda38 the stated reason is emotional (持倉過夜會「然後覺得很壓力。然後沮喪。開始情緒化交易。」), not exam-account drawdown protection. The prop-firm rationale is the skill's inference and is not marked 推測, unlike comparable inferences elsewhere in the file.",
+        "improvement": "Add a 推測 marker or restate as 「（推測）呢個習慣喺考試帳戶場景下同時起到保護作用；片中講嘅理由係情緒壓力（7j7_mhfda38）」.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/references/evidence.md",
+        "line": 55,
+        "message": "The §4.2 bullet carrying 「我的止盈點�是跟著日線圖或者是周期圖的」「紫损�很窄�我的止盈很寬」records take-profit/stop placement, which analysis/skill_boundary_ledger.md §7 assigns to lun-exit-management ('一切止損放邊/止盈點邊度/幾時提前走由本 skill 持有'). Neighbouring bullets carry pointers (→ lun-multi-timeframe-analysis, → lun-backtesting-method) but this one does not, so the reference file quietly holds sibling-owned content.",
+        "improvement": "Append 「（止盈/止損放置規則本體 → lun-exit-management，本節只作考試打法背景）」to that bullet, consistent with the pointer style used on lines 54 and 57.",
+        "axis": "llm"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-prop-firm-playbook/SKILL.md",
+        "line": 157,
+        "message": "Confirms the auto-axis finding: evidence paths (analysis/lun_trading_profile.md, data/transcripts/<video_id>.txt) are project-root-relative and do not resolve from the skill directory. The 路徑註記 at line 160 mitigates this honestly by explaining the two-levels-up relationship and stating that only references/evidence.md is guaranteed skill-local.",
+        "improvement": "Optionally add the skill-relative form once (../../../analysis/lun_trading_profile.md) alongside the project-root path so both a human and a tool can resolve it; the existing note is otherwise an acceptable mitigation.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}
