@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-09-02 14:28:40",
+  "seed": null,
+  "selection_mode": "manual",
+  "skill_name": "lun-ote-entry-model",
+  "skill_file": "skills/lun-ote-entry-model/SKILL.md",
+  "auto_review": {
+    "skill_name": "lun-ote-entry-model",
+    "skill_file": "skills/lun-ote-entry-model/SKILL.md",
+    "skill_type": "knowledge_only",
+    "score": 80,
+    "score_breakdown": {
+      "metadata_use_case": 20,
+      "workflow_coverage": 25,
+      "execution_safety_reproducibility": 14,
+      "supporting_artifacts": 9,
+      "test_health": 12
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ote-entry-model/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-ote-entry-model/references/...` — SKILL.md is loaded in the skill directory context."
+      }
+    ],
+    "improvements_required": true,
+    "improvement_items": [
+      "Reference paths use full project paths instead of relative paths. -> Use relative paths like `references/...` instead of `skills/lun-ote-entry-model/references/...` — SKILL.md is loaded in the skill directory context."
+    ],
+    "test_status": "not_applicable",
+    "test_command": null,
+    "test_output": ""
+  },
+  "llm_review": {
+    "provided": true,
+    "source_file": "/Users/lui/workspace/LunTrading/reports/llm_review_lun-ote-entry-model.json",
+    "score": 97,
+    "summary": "Outstanding corpus-grounded knowledge-only skill that handles the project's single highest injection risk flawlessly. Injection audit: the OTE band quote 「我們需要價格回調到第一浪的50%以上到50-79%以上」 was verified verbatim in data/transcripts/3Kt_ruGepB4.txt; a full scan of that transcript found zero occurrences of 62, 70.5, or any textbook OTE number, and every '62' occurrence in the skill files sits exclusively inside banned-injection fences (intro line 8, Prerequisite 1, Limitation 1, evidence line 42) — the textbook 62-79% band is triple-fenced and never taught, while the garbled source phrasing is honestly flagged as ambiguous with the 50-79% reading marked as 筆記推測. All six retracement-caliber table rows trace verbatim to their cited videos (50-79 and 61.8-plus in the 3Kt transcript, 50-61.8 in xwsyfVf2l0k, discount-half in the 7dDW8tF1cZo transcript, 38.2-78.6 pick-confluence in 7yDxPi7Roh0, Base Zone midline in _TEaFyv7-ac) and are kept parallel with an explicit no-merge rule anchored on the shared 50% midline. The 2023-2026 six-version genealogy is fully accurate: all row dates match note metadata (rdXofMdxNEQ 20231229, OANImZtkkeM 20240122, _TEaFyv7-ac 20240408, 7dDW8tF1cZo 20250822, 3Kt_ruGepB4 20251022, 7yDxPi7Roh0 20260128 / xwsyfVf2l0k 20260701) and row content quotes verified. Roughly 40 quote verifications in total all passed, including 15 '(transcript)'-labeled quotes across both main transcripts (garbage-trade rebuke, no-first-wave, 80% pullback, third-wave-longest, fourth-move confluence, 127.2/161.8, 78.6-shrink-to-0%, re-entry conditions, MTF secret handoff, order-placement dual option, 5-10 point buffer). DRY is correct on the critical boundary: the three-tier zone-confirmation table is referenced to lun-ict-pd-arrays in Prerequisite 4, Step 4, and the boundary table — never reproduced — while this skill holds only the order-placement dual option. 單源 (Base Zone, ICI, 78.6 single example), 推測 (低浪=第一浪, band interpretation, deeper-pullback-smaller-target generalization), and 經驗值 (80%, 50-60%) flags are consistent across the vocabulary table, workflow steps, and limitations. The only observation is a single shared quote with the sibling's aggressive tier.",
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ote-entry-model/SKILL.md",
+        "line": 83,
+        "message": "Step 5 quotes 「碰到了再做。或者是你要提前掛單也可以。」 (7dDW8tF1cZo), the same source quote that anchors the aggressive tier in lun-ict-pd-arrays' three-tier confirmation table. The usage context differs legitimately (order-placement permission here vs zone-confirmation tier there) and the tier table itself is properly referenced rather than duplicated, but a reader consulting both skills sees the same quote serving two rules without a cross-note explaining the relationship.",
+        "improvement": "Add a parenthetical after the quote in Step 5, e.g. 「（同一原話喺 lun-ict-pd-arrays 屬激進層——嗰邊管『等唔等確認』，呢邊管『用邊種單』）」, so the two usages are explicitly reconciled instead of appearing as independent rules."
+      }
+    ]
+  },
+  "final_review": {
+    "score": 91,
+    "weights": {
+      "auto_weight": 0.35,
+      "llm_weight": 0.65
+    },
+    "improvements_required": false,
+    "improvement_items": [],
+    "findings": [
+      {
+        "severity": "low",
+        "path": "skills/lun-ote-entry-model/SKILL.md",
+        "line": 8,
+        "message": "Reference paths use full project paths instead of relative paths.",
+        "improvement": "Use relative paths like `references/...` instead of `skills/lun-ote-entry-model/references/...` — SKILL.md is loaded in the skill directory context.",
+        "axis": "auto"
+      },
+      {
+        "severity": "low",
+        "path": "skills/lun-ote-entry-model/SKILL.md",
+        "line": 83,
+        "message": "Step 5 quotes 「碰到了再做。或者是你要提前掛單也可以。」 (7dDW8tF1cZo), the same source quote that anchors the aggressive tier in lun-ict-pd-arrays' three-tier confirmation table. The usage context differs legitimately (order-placement permission here vs zone-confirmation tier there) and the tier table itself is properly referenced rather than duplicated, but a reader consulting both skills sees the same quote serving two rules without a cross-note explaining the relationship.",
+        "improvement": "Add a parenthetical after the quote in Step 5, e.g. 「（同一原話喺 lun-ict-pd-arrays 屬激進層——嗰邊管『等唔等確認』，呢邊管『用邊種單』）」, so the two usages are explicitly reconciled instead of appearing as independent rules.",
+        "axis": "llm"
+      }
+    ]
+  },
+  "llm_prompt_file": null
+}

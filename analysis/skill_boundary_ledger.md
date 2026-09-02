@@ -44,3 +44,8 @@
 - **唔覆蓋**：各時框內用乜工具判斷（→ 對應 sibling）、時段（→ lun-kill-zones-timing）、入場觸發（→ lun-ote-entry-model）、圖形庫（→ lun-price-action-toolkit）。
 - **DRY anchor**：HTF→LTF 分工、時框組合揀選、動能回流骨架、A+ 過濾清單由本 skill 持有。
 
+### 6. lun-ote-entry-model ✅ 91/100（2026-09-02，auto 80 / LLM 97，first pass）
+- **覆蓋**：入場執行序列層 — Step 0-7 完整入場工作流（路由→流動性掃描→強動能→定浪拉 Fib→共識疊加→掛單/觸發雙選項→SL/TP 初設→失敗再入場）、OTE 口徑 50%–79%（講者原話，教科書 62-79% 明令禁止）、六口徑回調對照表（平行照錄）、入場模型族譜 2023-2026 六版演化、入場 K 線偏好（吞噬形態）。
+- **唔覆蓋**：PD Array 區域確認三層口徑（→ lun-ict-pd-arrays，引用唔重複）、掃蕩機制（→ lun-liquidity-analysis）、MTF 秘訣（→ lun-multi-timeframe-analysis）、出場管理細節（→ lun-exit-management）。
+- **DRY anchor**：入場「序列」（setup→trigger→order placement）由本 skill 持有。
+
