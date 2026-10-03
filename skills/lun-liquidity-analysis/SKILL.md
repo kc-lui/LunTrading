@@ -146,4 +146,4 @@ Order Flow（睇邊個價位成交量最高）、Value Area High/Low（只睇已
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（ASR 容錯對照表，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3；比賽系統未公開邊界依據 §7.1。
 - **Contributing videos（20，per profile §6.2）**：yZoSW3DGRGI（完整課程，2026-08-28 壓軸教材）、whJg0lgPbFo（訂單機制）、aSZzhnfOVkE（博弈入門）、JtPN1rBq5h0（突破/假突破）、xwsyfVf2l0k（聰明錢完整版）、_TEaFyv7-ac（stop hunting 早期版）、qWMKL-p1MPE（獵殺實戰應用）、E0PF_0XLDGo、RjNBnZ59c4U、kI5idYixD50、3Kt_ruGepB4、7dDW8tF1cZo、fTRv2HhTJUk、ofQ--jkHTm4、Q371XdV3apE、tCfmxMX5WaU、teVdcguZs_U、PypFn7GaVfE、WmW5fQjK5Qg、zgVlK7UBNTY。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim，whitespace-join 可；本 skill 已覆核 yZoSW3DGRGI 嘅訂單類型、BSL、三形態、站得住段落）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

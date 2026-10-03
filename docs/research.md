@@ -45,7 +45,7 @@ dual-axis-skill-reviewer 對 knowledge_only skills 嘅 auto axis 有結構性封
 3. 矛盾口徑平行分層唔裁決；permission 同 preference 分開呈現
 4. 單源元素逐個標「單源低信心」；推論標「推測」
 5. 贊助內容結構性隔離（【推廣合作】banner + CTA 引文做證據）＋時效性 caveat
-6. 路徑用自我定位錨（「本 skill 所在 .claude/skills/ 嘅上兩層」）＋ ../../../ 雙形式
+6. 路徑用自我定位錨（「本 skill 所在 `skills/` 嘅上一層目錄」）＋ `../../` 雙形式，絕不寫絕對路徑或 username
 
 ## 6. 團隊協作模式（實際 vs 設計）
 
@@ -61,3 +61,21 @@ dual-axis-skill-reviewer 對 knowledge_only skills 嘅 auto axis 有結構性封
 - excluded 9 條片（傳記/工具教學）或含 persona 素材，本輪未用。
 - Golden run 只覆蓋 4 條代表性問題；11 skills 全路由覆蓋測試未做。
 - 頻道持續更新；新影片需重跑管線增量處理（腳本已 resumable，只需重跑 fetch_meta → build_playlist_json 加分群 → run_pipeline）。
+
+## 8. 發佈結構（plugin 標準）
+
+開發期 skills/agent 放喺 `.claude/` 以便 project-local 載入；發佈時改用 Claude Code plugin 標準 layout：
+
+```
+.claude-plugin/plugin.json       # plugin manifest（name/version/description/author/repository/keywords）
+.claude-plugin/marketplace.json  # 自託管 marketplace，plugins[].source = "./"
+skills/<name>/SKILL.md           # 根目錄 skills/ 自動偵測，唔使喺 manifest 列出
+agents/<name>.md                 # 根目錄 agents/ 自動偵測
+```
+
+呢個 layout 令同一個 repo 既係 plugin 又係 marketplace，用家兩句就裝到：
+`/plugin marketplace add <owner>/<repo>` → `/plugin install <plugin>@<marketplace>`。
+
+發佈前用 `claude plugin validate <path>` 驗證四樣：repo 根（marketplace）、`.claude-plugin/plugin.json`、`skills/`、`agents/`。
+
+搬遷成本提醒：skills 內文如果寫咗相對路徑錨（指返 repo 嘅證據層），由 `.claude/skills/` 搬到 `skills/` 會令層數改變，11 個 SKILL.md 嘅路徑註記同 `../../../` 寫法都要一齊改。下次由一開始就用根目錄 layout 可以慳返呢步。

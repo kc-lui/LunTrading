@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "luntrading",
+  "description": "交易倫（@LunTrading）交易方法論蒸餾 — Claude Code skills 同 subagent",
+  "owner": {
+    "name": "Raymond Loi",
+    "url": "https://github.com/kc-lui"
+  },
+  "plugins": [
+    {
+      "name": "lun-trading",
+      "source": "./",
+      "description": "11 個 Skills ＋ 1 個 subagent：ICT/聰明錢/價格行為交易框架，全部規則可追溯至原片逐字稿。",
+      "version": "1.0.0",
+      "category": "productivity",
+      "author": {
+        "name": "Raymond Loi",
+        "url": "https://github.com/kc-lui"
+      }
+    }
+  ]
+}

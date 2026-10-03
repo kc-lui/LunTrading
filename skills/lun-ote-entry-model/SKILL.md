@@ -157,4 +157,4 @@ description: 按照交易倫（Alan / LunTrading）的 OTE（Optimal Trade Entry
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（ASR 容錯對照表，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3；經驗值警告依據 §7.4。
 - **Contributing videos（9，per profile §6.5）**：3Kt_ruGepB4（OTE 四招主教材）、7dDW8tF1cZo（完整入場模型）、xwsyfVf2l0k（策略一 50–61.8 版）、hmpAys3lJEo（一句版定義＋實戰）、zgVlK7UBNTY（OTE 成立實例＋再入場）、7yDxPi7Roh0（Fib ABC 38.2–78.6）、rdXofMdxNEQ（動能 Fib 早期版）、OANImZtkkeM（ICI Fib 進場）、_TEaFyv7-ac（Base Zone 早期版）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim，whitespace-join 可；本 skill 已覆核 3Kt_ruGepB4 全片四招/50–79%/127.2/78.6/再入場段落、7dDW8tF1cZo 便宜區/掛單雙選項/止損三檔段落）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

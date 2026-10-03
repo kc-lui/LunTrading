@@ -8,18 +8,18 @@
 
 | 交付物 | 位置 | 審查分數 |
 |---|---|---|
-| `lun-ict-pd-arrays` | `.claude/skills/` | 90（auto 80 / LLM 96） |
-| `lun-price-action-toolkit` | `.claude/skills/` | 90（auto 80 / LLM 96） |
-| `lun-liquidity-analysis` | `.claude/skills/` | 90（auto 80 / LLM 96，first pass） |
-| `lun-kill-zones-timing` | `.claude/skills/` | 90（auto 80 / LLM 96，first pass） |
-| `lun-multi-timeframe-analysis` | `.claude/skills/` | 90（auto 80 / LLM 96，first pass） |
-| `lun-ote-entry-model` | `.claude/skills/` | 91（auto 80 / LLM 97，first pass） |
-| `lun-exit-management` | `.claude/skills/` | 90（auto 80 / LLM 96，first pass） |
-| `lun-backtesting-method` | `.claude/skills/` | 90（auto 80 / LLM 96，first pass） |
-| `lun-prop-firm-playbook` | `.claude/skills/` | 90（auto 80 / LLM 96） |
-| `lun-risk-management` | `.claude/skills/` | 90（auto 80 / LLM 96） |
-| `lun-trading-psychology` | `.claude/skills/` | 91（auto 80 / LLM 97） |
-| `lun-trading` agent | `.claude/agents/lun-trading.md` | spec 驗證＋golden run |
+| `lun-ict-pd-arrays` | `skills/` | 90（auto 80 / LLM 96） |
+| `lun-price-action-toolkit` | `skills/` | 90（auto 80 / LLM 96） |
+| `lun-liquidity-analysis` | `skills/` | 90（auto 80 / LLM 96，first pass） |
+| `lun-kill-zones-timing` | `skills/` | 90（auto 80 / LLM 96，first pass） |
+| `lun-multi-timeframe-analysis` | `skills/` | 90（auto 80 / LLM 96，first pass） |
+| `lun-ote-entry-model` | `skills/` | 91（auto 80 / LLM 97，first pass） |
+| `lun-exit-management` | `skills/` | 90（auto 80 / LLM 96，first pass） |
+| `lun-backtesting-method` | `skills/` | 90（auto 80 / LLM 96，first pass） |
+| `lun-prop-firm-playbook` | `skills/` | 90（auto 80 / LLM 96） |
+| `lun-risk-management` | `skills/` | 90（auto 80 / LLM 96） |
+| `lun-trading-psychology` | `skills/` | 91（auto 80 / LLM 97） |
+| `lun-trading` agent | `agents/lun-trading.md` | spec 驗證＋golden run |
 
 每個 skill：`SKILL.md`（Agent Skills 規範 frontmatter：name + description）＋ `references/evidence.md`（全量 verbatim 引文證據，附 video id 同 "(transcript)" 覆核標記）。審查工具：[dual-axis-skill-reviewer](~/.claude/skills/dual-axis-skill-reviewer)，knowledge_only 權重 0.35 auto / 0.65 LLM（理據見 `docs/team_design.md` §3.4），閘門 ≥90，author 同 reviewer 必須係唔同 agent 實例。
 
@@ -54,12 +54,25 @@ total transcript chars (ok files): 335,622
 
 團隊設計（agent-organizer 產出）：`docs/team_design.md`。研究文檔：`docs/research.md`。
 
+## 安裝
+
+本倉庫同時係 Claude Code **plugin** 同佢自己嘅 **marketplace**：
+
+```
+/plugin marketplace add kc-lui/LunTrading
+/plugin install lun-trading@luntrading
+```
+
+手動安裝、單一專案安裝、驗證方法同常見問題，見 **[INSTALL.md](INSTALL.md)**。
+
 ## 使用
 
-```bash
-# 喺任何 project 用（已安裝到 global）
-# subagent：Claude Code 內 "use the lun-trading agent to ..."
-# skills：/lun-ict-pd-arrays 等，或由 lun-trading agent 自動路由
+```
+# subagent：按決策框架自動路由到對應 skills
+用 lun-trading agent 分析：黃金日線上升趨勢、4小時回調，紐約時段點搵多單位？
+
+# 單一 skill 直接調用
+/lun-liquidity-analysis
 ```
 
 Agent 驗證樣本（golden run）：`analysis/agent_verification_sample.md`。
@@ -67,8 +80,10 @@ Agent 驗證樣本（golden run）：`analysis/agent_verification_sample.md`。
 ## 目錄結構
 
 ```
-.claude/agents/lun-trading.md    # subagent（精簡核心＋路由表）
-.claude/skills/lun-*/            # 11 個 skills（SKILL.md + references/evidence.md）
+.claude-plugin/plugin.json       # plugin manifest
+.claude-plugin/marketplace.json  # 自託管 marketplace（source: ./）
+agents/lun-trading.md            # subagent（精簡核心＋路由表）
+skills/lun-*/                    # 11 個 skills（SKILL.md + references/evidence.md）
 analysis/video_notes/<id>.md     # 57 份逐片筆記（證據層）
 analysis/lun_trading_profile.md  # 綜合檔案（研究文檔本體）
 analysis/skill_boundary_ledger.md# skill 邊界帳（DRY 契約）
@@ -94,7 +109,7 @@ scripts/                         # 可重跑管線
 
 本專案嘅所有知識內容蒸餾自 [@LunTrading](https://www.youtube.com/@LunTrading)（交易倫 Alan）公開發佈嘅 YouTube 教學影片。版權屬原作者所有。
 
-- `data/transcripts/` 係機器轉錄（ASR）嘅逐字稿，`analysis/` 同 `.claude/skills/*/references/` 含逐字引文，一律用於**研究、學習與方法論示範**目的，並全程標註來源 video id 以便追溯原片。
+- `data/transcripts/` 係機器轉錄（ASR）嘅逐字稿，`analysis/` 同 `skills/*/references/` 含逐字引文，一律用於**研究、學習與方法論示範**目的，並全程標註來源 video id 以便追溯原片。
 - 本倉庫**唔係**原作者授權或背書嘅產物，亦唔包含佢付費課程嘅內容（corpus 中明示留喺付費班嘅規則已明確標記為未公開且禁止補完）。
 - 所有交易規則、參數、盈虧比同勝率數字均為影片教學示範，**唔構成投資建議**；實際使用前必須自行回測驗證。
 - 如原作者希望移除本倉庫任何內容，請開 issue，我會即時處理。

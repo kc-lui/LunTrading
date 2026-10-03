@@ -147,4 +147,4 @@ description: 按照交易倫（Alan / LunTrading）嘅回測與系統驗證方�
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（**回撤＝回測**、复盘＝復盤、希望值＝期望值、大樹法則＝大數法則等，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3；實績警告依據 §7.4。
 - **Contributing videos（16＋1，per profile §6.8）**：RdnJw-mhwlE（回測主教材）；PypFn7GaVfE（多系統子節）；B7rumsOw6_U（bar-by-bar 示範＋心態一致）、rLP-MPvGmDE（系統信心數據）、54WCm_VBYfY（大樣本/樣本污染）、MjPZizFnX-E（Excel/Tradezella＋季度覆盤）、rE21_onS0uo（50–100 筆門檻）、xmHaONnNrCw（截圖＋每週覆盤）、HeQiNekCZng（交易解剖＋最好 10 筆）、oiMlx5UlRLQ／eIeYQStY5rI（交易日記）、T2Nk46EqAh4（一萬小時）、rdXofMdxNEQ（搵 100 個練習）、RjNBnZ59c4U（10/100 單→小資金）、s4on4yJCLII（模擬→小→大）、VjSB-VRyxWI（逐一測試）、pK6S7CEqMAk（用前先復盤）；補充：mDpbsw81ftI（交易日記翻十倍）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim；本 skill 已覆核 RdnJw-mhwlE 100/200 單、連虧 11/300 段落，PypFn7GaVfE 100 筆挑戰＋付費班框架段落，54WCm_VBYfY 樣本污染句，MjPZizFnX-E Excel/資金曲線句，rLP-MPvGmDE 系統信心數據段落）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

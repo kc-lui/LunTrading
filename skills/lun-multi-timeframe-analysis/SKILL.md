@@ -164,4 +164,4 @@ Russell 2000 1:22.45 解剖：三層各自貢獻一個 confluence（週線結構
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（ASR 容錯對照表，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3；付費班邊界依據 §7.1。
 - **Contributing videos（明確 2＋子節 5＋支撐 ≥8，per profile §6.4）**：GINdJCIIEvw（三視角/冰山/大盈虧比工程，提議片）、B7rumsOw6_U（一致性流程與回測示範，提議片）、k0ESC6XYz50（A+ 四大標準子節，單源）、MjPZizFnX-E（動能回流定位＋Q1 實績）、WmW5fQjK5Qg（週→日→1H 個案＋付費班保留聲明）、zgVlK7UBNTY（原油 1:60 解剖＋骨架第一步）、xmHaONnNrCw（警報器流程＋FTMO 場景）、whJg0lgPbFo（4H→30m/15m）、fLN20X1dP48（1H→5m 精簡版）、pK6S7CEqMAk（三步驟版）、xwsyfVf2l0k（四層版）、qWMKL-p1MPE、YeGLUuh3eCg、7yDxPi7Roh0、hmpAys3lJEo（分工流程示範）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim，whitespace-join 可；本 skill 已覆核 GINdJCIIEvw 三視角/冰山/靠猜段落、B7rumsOw6_U 一致性段落、MjPZizFnX-E 大時光止盈段落、k0ESC6XYz50 垃圾交易/月 3-5 筆段落、xmHaONnNrCw 警報器/5分鐘切換段落）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

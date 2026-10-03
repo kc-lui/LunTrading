@@ -144,4 +144,4 @@ Session 結構直接餵入策略選擇：第一步「我們一定要確認亞洲
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（ASR 容錯對照表，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3；未教邊界依據 §7.1。
 - **Contributing videos（10＋2 子節，per profile §6.6）**：CJi1ltRQnys（Kill Zone 主教材）、7dDW8tF1cZo（時間表指標設定＋session 高低位）、QZNzq-BunA4（session 定義＋時間出場規則）、7j7_mhfda38（倫敦紐約硬過濾＋絕不過夜）、hmpAys3lJEo（個人時段紀律＋9點半旁證）、Q371XdV3apE（時段作入場過濾）、RjNBnZ59c4U（session 指標＋亞洲盤執行難度）、aSZzhnfOVkE（session 高低位＝流動性）、VjSB-VRyxWI（London Breakout 時段依據）、E0PF_0XLDGo（Weekly Profile 子節，單源）、kI5idYixD50（數據日曆子節，單源）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim，whitespace-join 可；本 skill 已覆核 CJi1ltRQnys 全文時間表/routine 段落同 7dDW8tF1cZo 嘅 Killzone 指標設定段落）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

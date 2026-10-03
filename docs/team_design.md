@@ -4,6 +4,8 @@
 >
 > 前例：`/Users/lui/workspace/Drmarkyang`（mark-yang-quant，33 部影片→單一 subagent，知識全部內嵌）。本專案的關鍵差異：57 部影片、知識拆分進 9 個 skills，subagent 只留 routing table，並多一層「逐一生成＋自動審查閘門」的循環。
 >
+> **發佈結構註記（2026-10-03）**：本文件寫於開發階段，當時 skills/agent 放喺 `.claude/skills/`、`.claude/agents/`。正式發佈時已改為 Claude Code plugin 標準 layout（repo 根目錄 `skills/`、`agents/`，加 `.claude-plugin/` manifest），安裝方式見 [INSTALL.md](../INSTALL.md)。下文路徑屬開發期紀錄，未改寫。
+
 > 本文件面向**執行方**（main session，具 Task tool 可 fan-out subagents）。所有角色都是 *main session 呼叫的 agent 類型*，不是新流程外的獨立系統。
 
 ---

@@ -153,4 +153,4 @@ description: 按照交易倫（Alan / LunTrading）的出場管理體系管理�
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（止盈/止損/盈虧比/平價保護誤認變體，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3；經驗值與實績警告依據 §7.4。
 - **Contributing videos（核心 2＋支撐 8，per profile §6.7）**：hkCvRoLc3Nk（止損止盈完整攻略）、Q371XdV3apE（標準差投射）；GINdJCIIEvw（三層管理＋EMA50 追蹤）、T2Nk46EqAh4（80% 條件版＋半途保本）、B7rumsOw6_U（結構鎖利＋5分鐘 EMA50）、xwsyfVf2l0k（平價保護鐵律）、zgVlK7UBNTY（鎖利節奏＋持過一週）、RdnJw-mhwlE（徘徊/兩日平保出場；Pivot 句存疑）、7j7_mhfda38（下一個 Pivot 止盈＋唔過夜）、qWMKL-p1MPE／hmpAys3lJEo／WmW5fQjK5Qg／kI5idYixD50／MjPZizFnX-E（提早出場/整數關口/鎖 1:16/數據動能/實盤佐證）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim；本 skill 已覆核 hkCvRoLc3Nk 三法/80%/勝率30%段落、Q371XdV3apE 基準腳/級別/揀級/1:1/-1保本/出一半段落、xwsyfVf2l0k 鐵律句、GINdJCIIEvw 三層句、zgVlK7UBNTY 鎖利節奏句、RdnJw-mhwlE Pivot 句、T2Nk46EqAh4 80% 句）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。

@@ -1,0 +1,23 @@
+{
+  "name": "lun-trading",
+  "version": "1.0.0",
+  "description": "11 個 Claude Code Skills ＋ 1 個 subagent，蒸餾自 YouTube 頻道 @LunTrading（交易倫）嘅 57 條教學影片：ICT/PD Array、流動性、Kill Zone、多時框、OTE 入場、出場管理、回測方法、prop firm、風險管理、交易心理。每個 skill 全部規則附原片 video id 同逐字引文，經雙軸審查 ≥90 分。",
+  "author": {
+    "name": "Raymond Loi",
+    "url": "https://github.com/kc-lui"
+  },
+  "homepage": "https://github.com/kc-lui/LunTrading",
+  "repository": "https://github.com/kc-lui/LunTrading",
+  "keywords": [
+    "trading",
+    "ict",
+    "smart-money",
+    "price-action",
+    "forex",
+    "gold",
+    "prop-firm",
+    "risk-management",
+    "trading-psychology",
+    "chinese"
+  ]
+}

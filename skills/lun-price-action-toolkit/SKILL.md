@@ -157,4 +157,4 @@ description: 按照交易倫（Alan / LunTrading）的教法運用價格行為�
 - **正字對照表**：`analysis/lun_trading_profile.md` §5（ASR 容錯對照表，讀任何引文/逐字稿必查）；矛盾處理依據 §7.3。
 - **Contributing videos（29＋1，per profile §6.3）**：pK6S7CEqMAk（主幹）、VjSB-VRyxWI（策略總綱）、7yDxPi7Roh0（8 個中長線策略）、teVdcguZs_U（S&D）、OANImZtkkeM（ICI）、qWMKL-p1MPE（海龜湯）、QZNzq-BunA4（倫敦破位）、fTRv2HhTJUk（破位清單）、rdXofMdxNEQ（動能）、fLN20X1dP48、YeGLUuh3eCg、B7rumsOw6_U、GINdJCIIEvw、hmpAys3lJEo、JtPN1rBq5h0、WmW5fQjK5Qg、zgVlK7UBNTY、xwsyfVf2l0k、tCfmxMX5WaU、ofQ--jkHTm4、RdnJw-mhwlE、s4on4yJCLII、T2Nk46EqAh4、hkCvRoLc3Nk、7j7_mhfda38、k0ESC6XYz50、PypFn7GaVfE（Wyckoff 交叉引用）、yZoSW3DGRGI、6_5DVT6uS9E（harmonic 子節，+1 吸收自 lun-harmonic-patterns 提議）。
 - **逐字稿**：`data/transcripts/<video_id>.txt`（引用必須 verbatim，whitespace-join 可；本 skill 已覆核 pK6S7CEqMAk 嘅時鐘法與力度三分法段落）。
-- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `.claude/skills/` 嘅上兩層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
+- **路徑註記**：上面 `analysis/…` 同 `data/…` 路徑係相對於 LunTrading 項目根目錄（即本 skill 所在 `skills/` 嘅上一層目錄）；如果本 skill 被安裝到全域位置，該啲證據仍然留喺該項目入面，skill 本地只保證 references/evidence.md 可用。
